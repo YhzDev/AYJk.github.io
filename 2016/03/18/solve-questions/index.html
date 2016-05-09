@@ -1,0 +1,1034 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Questions,iOS," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="AYJk的技术博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="前言博主在自己学习开发过程中遇到或见到的一些问题，与你们分享，希望有所帮助。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新人在开发初期遇到的各种问题">
+<meta property="og:url" content="ayjkdev.top/2016/03/18/solve-questions/index.html">
+<meta property="og:site_name" content="AYJk的技术博客">
+<meta property="og:description" content="前言博主在自己学习开发过程中遇到或见到的一些问题，与你们分享，希望有所帮助。">
+<meta property="og:updated_time" content="2016-03-28T11:10:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="新人在开发初期遇到的各种问题">
+<meta name="twitter:description" content="前言博主在自己学习开发过程中遇到或见到的一些问题，与你们分享，希望有所帮助。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> 新人在开发初期遇到的各种问题 | AYJk的技术博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?b3526e9e7e2243a0c3d22c2450007b87";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AYJk的技术博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">不管怎么样，我就是要漂移。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'NGKkuvyoFDrY9TyBKaKV','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                新人在开发初期遇到的各种问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-18T09:19:59+08:00" content="2016-03-18">
+              2016-03-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Develop/" itemprop="url" rel="index">
+                    <span itemprop="name">Develop</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/18/solve-questions/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/18/solve-questions/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/03/18/solve-questions/" class="leancloud_visitors" data-flag-title="新人在开发初期遇到的各种问题">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>博主在自己学习开发过程中遇到或见到的一些问题，与你们分享，希望有所帮助。</p>
+<a id="more"></a>
+<h2 id="问题排序"><a href="#问题排序" class="headerlink" title="问题排序"></a>问题排序</h2><h3 id="1-报错Switch-is-in-protect-scope"><a href="#1-报错Switch-is-in-protect-scope" class="headerlink" title="1.报错Switch is in protect scope"></a>1.报错Switch is in protect scope</h3><p>解决方法：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">    <span class="keyword">switch</span> (sender<span class="variable">.tag</span>) &#123;        </span><br><span class="line">     <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line"><span class="comment">//block方式添加动画，这里需要加上大括号解决报错：Switch is in protect scope</span></span><br><span class="line">        &#123;</span><br><span class="line">            center<span class="variable">.y</span> -= <span class="number">20</span>;</span><br><span class="line">            [<span class="built_in">UIView</span> animateWithDuration:<span class="number">1</span> animations:^&#123;</span><br><span class="line">                <span class="keyword">self</span><span class="variable">.buttonImage</span><span class="variable">.center</span> = center;</span><br><span class="line">            &#125;];</span><br><span class="line">        &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-使用UITextView输入框上半部仍为空白"><a href="#2-使用UITextView输入框上半部仍为空白" class="headerlink" title="2.使用UITextView输入框上半部仍为空白"></a>2.使用UITextView输入框上半部仍为空白</h3><p>解决方法：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span><span class="variable">.automaticallyAdjustsScrollViewInsets</span> = <span class="literal">NO</span>;</span><br></pre></td></tr></table></figure></p>
+<p>凡是继承UIScrolView的空间都会收到<strong> automaticallyAdjustsScrollViewInsets </strong>属性的影响。默认为<strong> YES </strong>，当有UINavigationbar的时候UITextView的表现为上面空白。<br>详情请参考博主的这边文章 <a href="http://ayjkdev.top/2016/02/20/answer-in-group/">在交流群中的一次作答</a></p>
+<h3 id="3-在一个UIViewController中更改UITabBar的属性"><a href="#3-在一个UIViewController中更改UITabBar的属性" class="headerlink" title="3.在一个UIViewController中更改UITabBar的属性"></a>3.在一个UIViewController中更改UITabBar的属性</h3><p>解决方法：<br>在tabBar中声明一个更改的方法。在UIViewController中<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">_tabBarC = (TabBarController *)<span class="keyword">self</span><span class="variable">.tabBarController</span>;</span><br></pre></td></tr></table></figure></p>
+<p>取得tabBarController对象，再用_tabBarC去修改属性。</p>
+<h3 id="4-在Navigation上自定义了右边按钮，如何取得该按钮对象。以及该按钮的属性设定。"><a href="#4-在Navigation上自定义了右边按钮，如何取得该按钮对象。以及该按钮的属性设定。" class="headerlink" title="4.在Navigation上自定义了右边按钮，如何取得该按钮对象。以及该按钮的属性设定。"></a>4.在Navigation上自定义了右边按钮，如何取得该按钮对象。以及该按钮的属性设定。</h3><p>解决方法：<br>取得对象可以把该按钮设为全局变量或者通过如下代码获取<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span><span class="variable">.navigationController</span><span class="variable">.navigationBar</span> viewWithTag:tag];</span><br></pre></td></tr></table></figure></p>
+<p>对按钮的外形就行设定时，放在如下代码的前面。<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span><span class="variable">.navigationItem</span><span class="variable">.rightBarButtonItem</span> = [[<span class="built_in">UIBarButtonItem</span> alloc] initWithCustomView:_sendButton];</span><br></pre></td></tr></table></figure></p>
+<p>但是对是否为禁用状态的设定必须在其后。</p>
+<h3 id="5-在三级控制器中由UITabBarController控制的UINavigationCotroller中，不能通过"><a href="#5-在三级控制器中由UITabBarController控制的UINavigationCotroller中，不能通过" class="headerlink" title="5.在三级控制器中由UITabBarController控制的UINavigationCotroller中，不能通过"></a>5.在三级控制器中由UITabBarController控制的UINavigationCotroller中，不能通过</h3><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span><span class="variable">.navigationController</span> popToViewController:mainC animated:<span class="literal">YES</span>];</span><br></pre></td></tr></table></figure>
+<p>pop到另一个UINavigationCotroller。只能在同一UINavigationCotroller中push到不同的ViewController。</p>
+<h3 id="6-计算UITextView中的行数。"><a href="#6-计算UITextView中的行数。" class="headerlink" title="6.计算UITextView中的行数。"></a>6.计算UITextView中的行数。</h3><p>解决方法：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">UITextView</span> *textView = (<span class="built_in">UITextView</span> *)[<span class="keyword">self</span><span class="variable">.view</span> viewWithTag:tag];</span><br><span class="line"><span class="built_in">NSString</span> *str = textView<span class="variable">.text</span>;</span><br><span class="line"><span class="built_in">CGSize</span> size = [str sizeWithAttributes:@&#123;<span class="built_in">NSFontAttributeName</span>:textView<span class="variable">.font</span>&#125;];</span><br><span class="line"><span class="keyword">int</span> colomNumber = textView<span class="variable">.contentSize</span><span class="variable">.height</span>/size<span class="variable">.height</span>;</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"%d"</span>,colomNumber);</span><br></pre></td></tr></table></figure></p>
+<h3 id="7-更改UISearchBar的cancel按钮显示文本。"><a href="#7-更改UISearchBar的cancel按钮显示文本。" class="headerlink" title="7.更改UISearchBar的cancel按钮显示文本。"></a>7.更改UISearchBar的cancel按钮显示文本。</h3><p>解决方法：<br>通过遍历定义在searchBar上的子视图来修改。<br>修改之前一定要打开取消按钮才能遍历修改。<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">searchBar<span class="variable">.showsCancelButton</span> = <span class="literal">YES</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">id</span> searchBtn <span class="keyword">in</span> [searchBar<span class="variable">.subviews</span>[<span class="number">0</span>] subviews]) &#123;</span><br><span class="line">    <span class="keyword">if</span> ([searchBtn isKindOfClass:[<span class="built_in">UIButton</span> class]]) &#123;</span><br><span class="line">        <span class="built_in">UIButton</span> *cancalBtn = (<span class="built_in">UIButton</span> *)searchBtn;</span><br><span class="line">        cancalBtn<span class="variable">.enabled</span> = <span class="literal">YES</span>;</span><br><span class="line">        [cancalBtn setTitle:<span class="string">@"取消"</span> forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="8-当同一-m文件中出现两个继承于-UIScrollView-的类并设置了代理，使用"><a href="#8-当同一-m文件中出现两个继承于-UIScrollView-的类并设置了代理，使用" class="headerlink" title="8.当同一.m文件中出现两个继承于 UIScrollView 的类并设置了代理，使用"></a>8.当同一.m文件中出现两个继承于 UIScrollView 的类并设置了代理，使用</h3><p><strong> - (void)scrollViewDidScroll:(UIScrollView *)scrollView </strong>时两个视图各自滚动时都会掉用该方法。可能会产生不必要的bug。<br>解决方法：<br>可以设定对应了tag值来限制实现对应逻辑。</p>
+<h3 id="9-UITableViewStylePlain-和-UITableViewStyleGrouped-的区别"><a href="#9-UITableViewStylePlain-和-UITableViewStyleGrouped-的区别" class="headerlink" title="9.  UITableViewStylePlain 和 UITableViewStyleGrouped 的区别"></a>9. <strong> UITableViewStylePlain </strong>和<strong> UITableViewStyleGrouped </strong>的区别</h3><p>解决方法：<br>UITableViewStylePlain只有一组，列表形式<br>UITableViewStyleGrouped可以多组，列表分组形式，</p>
+<blockquote>
+<p>扩展：如果要在UITableViewCell的头视图上放视图，看需求是怎么样，如果需要头视图跟随tableView滚动，最好选用UITableViewStyleGrouped。<br>UITableViewStylePlain设置头视图是之后，头视图不会跟随tableView滚动。当然，强行设置UITableViewStylePlain也行，不过需要在<strong> - (void)scrollViewDidScroll:(UIScrollView *)scrollView </strong>中进行计算处理scrollView.contentInset<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)scrollViewDidScroll:(<span class="built_in">UIScrollView</span> *)scrollView &#123;</span><br><span class="line">    <span class="built_in">CGFloat</span> sectionHeaderHeight = <span class="number">44</span>;</span><br><span class="line">    <span class="keyword">if</span> (scrollView<span class="variable">.contentOffset</span><span class="variable">.y</span> &lt;= sectionHeaderHeight &amp;&amp; scrollView<span class="variable">.contentOffset</span><span class="variable">.y</span> &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        scrollView<span class="variable">.contentInset</span> = <span class="built_in">UIEdgeInsetsMake</span>(-scrollView<span class="variable">.contentOffset</span><span class="variable">.y</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (scrollView<span class="variable">.contentOffset</span><span class="variable">.y</span> &gt;= sectionHeaderHeight) &#123;</span><br><span class="line">        scrollView<span class="variable">.contentInset</span> = <span class="built_in">UIEdgeInsetsMake</span>(-sectionHeaderHeight, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="10-隐藏返回按钮"><a href="#10-隐藏返回按钮" class="headerlink" title="10.隐藏返回按钮"></a>10.隐藏返回按钮</h3><p>解决方法：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span><span class="variable">.navigationItem</span> setHidesBackButton:<span class="literal">YES</span> animated:<span class="literal">NO</span>];</span><br></pre></td></tr></table></figure></p>
+<p>要写在当前ViewController中。</p>
+<h3 id="11-取消导航栏返回按钮的title"><a href="#11-取消导航栏返回按钮的title" class="headerlink" title="11.取消导航栏返回按钮的title"></a>11.取消导航栏返回按钮的title</h3><p>解决方法：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[[<span class="built_in">UIBarButtonItem</span> appearance] setBackButtonTitlePositionAdjustment:<span class="built_in">UIOffsetMake</span>(<span class="number">0</span>, -<span class="number">60</span>) forBarMetrics:<span class="built_in">UIBarMetricsDefault</span>];</span><br></pre></td></tr></table></figure></p>
+<h3 id="12-PCH文件的建立"><a href="#12-PCH文件的建立" class="headerlink" title="12.PCH文件的建立"></a>12.PCH文件的建立</h3><p>解决方法：<br>在Building setting中搜索Prefix Header，将它改为：$(SRCROOT)/项目名/…具体路径/pch文件名<br>如：$(SRCROOT)/TestDemo/test.pch</p>
+<h3 id="13-自定义UIScrollView的开启PageEnable的翻页效果。"><a href="#13-自定义UIScrollView的开启PageEnable的翻页效果。" class="headerlink" title="13.自定义UIScrollView的开启PageEnable的翻页效果。"></a>13.自定义UIScrollView的开启PageEnable的翻页效果。</h3><p>解决方法：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)scrollViewWillEndDragging:(<span class="built_in">UIScrollView</span> *)scrollView withVelocity:(<span class="built_in">CGPoint</span>)velocity targetContentOffset:(<span class="keyword">inout</span> <span class="built_in">CGPoint</span> *)targetContentOffset &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    NSLog(@"%f",targetContentOffset -&gt; x);</span></span><br><span class="line"><span class="comment">//    NSLog(@"%f",velocity.x);</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> currentIndex;</span><br><span class="line">    <span class="keyword">int</span> index = ((kScreenWidth - kCellWidthNeedCut)/<span class="number">2</span> + targetContentOffset -&gt; x ) / (kScreenWidth - kCellWidthNeedCut);</span><br><span class="line">    <span class="keyword">if</span> (currentIndex == index) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (velocity<span class="variable">.x</span> &gt; <span class="number">0.4</span> &amp;&amp; index &lt; _topCollectViewArray<span class="variable">.count</span> - <span class="number">1</span>) &#123;</span><br><span class="line">            index ++;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (velocity<span class="variable">.x</span> &lt; -<span class="number">0.4</span> &amp;&amp; index &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            index --;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    targetContentOffset -&gt; x =  index * (kScreenWidth - kCellWidthNeedCut);</span><br><span class="line">    currentIndex = index;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="14-JSON文件的读取"><a href="#14-JSON文件的读取" class="headerlink" title="14.JSON文件的读取"></a>14.JSON文件的读取</h3><p>解决方法：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//需带上后缀名</span></span><br><span class="line">+ (<span class="keyword">id</span>)jsonSerializationWithName:(<span class="built_in">NSString</span> *)jsonName &#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSString</span> *jsonPath = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:jsonName ofType:<span class="literal">nil</span>];</span><br><span class="line">    <span class="built_in">NSData</span> *jsonData = [<span class="built_in">NSData</span> dataWithContentsOfFile:jsonPath];</span><br><span class="line">    <span class="keyword">id</span> Dataserialization = [<span class="built_in">NSJSONSerialization</span> JSONObjectWithData:jsonData options:<span class="built_in">NSJSONReadingMutableContainers</span> error:<span class="literal">nil</span>];</span><br><span class="line">    <span class="keyword">return</span> Dataserialization;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="15-iOS7-tableviewcell上面有button，但是button的点击效果没有"><a href="#15-iOS7-tableviewcell上面有button，但是button的点击效果没有" class="headerlink" title="15.iOS7 tableviewcell上面有button，但是button的点击效果没有"></a>15.iOS7 tableviewcell上面有button，但是button的点击效果没有</h3><p>解决方法：<br>iOS6的UITableViewCell子视图(subviews)的容器是UITableViewCellContentView<br>iOS7的UITableViewCell子视图(subviews)的容器是UITableViewCellScrollView<br>由于IOS7中添加了滑动后出现编辑按钮的操作，所以使用scrollView来处理，UITableViewCellScrollView有对触摸的相应处理，导致按钮的点击效果被屏蔽了，但是点击事件还是在的，所以可以通过</p>
+<h4 id="1-设置"><a href="#1-设置" class="headerlink" title="1.设置"></a>1.设置</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">tableView<span class="variable">.delaysContentTouches</span> = <span class="literal">NO</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="2-同时在-UITableViewCell-tableView-UITableView-tableView-cellForRowAtIndexPath-NSIndexPath-indexPath-代理方法中对scrollView把延迟触摸设置为NO即可"><a href="#2-同时在-UITableViewCell-tableView-UITableView-tableView-cellForRowAtIndexPath-NSIndexPath-indexPath-代理方法中对scrollView把延迟触摸设置为NO即可" class="headerlink" title="2.同时在 (UITableViewCell )tableView:(UITableView )tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath 代理方法中对scrollView把延迟触摸设置为NO即可"></a>2.同时在<strong> (UITableViewCell <em>)tableView:(UITableView </em>)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath </strong>代理方法中对scrollView把延迟触摸设置为NO即可</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">id</span> obj <span class="keyword">in</span> cell<span class="variable">.subviews</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span> ([<span class="built_in">NSStringFromClass</span>([obj class])isEqualToString:<span class="string">@"UITableViewCellScrollView"</span>])&#123;</span><br><span class="line">            <span class="built_in">UIScrollView</span> *scroll = (<span class="built_in">UIScrollView</span> *) obj;</span><br><span class="line">            scroll<span class="variable">.delaysContentTouches</span> =<span class="literal">NO</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="16-UITableViewCell中的使用cell和cell-contentView的区别"><a href="#16-UITableViewCell中的使用cell和cell-contentView的区别" class="headerlink" title="16.UITableViewCell中的使用cell和cell.contentView的区别"></a>16.UITableViewCell中的使用cell和cell.contentView的区别</h3><p>解决方法：<br>一般我们向cell中添加子视图，有两种方式<br>1.<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[cell addSubview:]</span><br></pre></td></tr></table></figure></p>
+<p>2.<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[cell<span class="variable">.contentView</span> addSubview:]</span><br></pre></td></tr></table></figure></p>
+<p>区别在于进行cell编辑时，比如cell内容向左移或者右移时，第一种方式子视图不会移动，第二种可以，所以这种情况一般使用第二种方式。<br>还有在设置backgroundColor时，使用cell设置时左移或者右移颜色是不会变的，而用cell.contentCell设置时，移动后的空白会显示cell的默认颜色，这种情况视实际情况选择。<br>其实这两种方式在大多数情况是一样，不用纠结。</p>
+<h3 id="17-设置button的title属性"><a href="#17-设置button的title属性" class="headerlink" title="17.设置button的title属性"></a>17.设置button的title属性</h3><p>解决方法：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">btn<span class="variable">.frame</span> = <span class="built_in">CGRectMake</span>(x, y, width, height);</span><br><span class="line">[btn setTitle: <span class="string">@"search"</span> forState: <span class="built_in">UIControlStateNormal</span>];</span><br><span class="line"><span class="comment">//设置按钮上的自体的大小</span></span><br><span class="line"><span class="comment">//[btn setFont: [UIFont systemFontSize: 14.0]];    //这种可以用来设置字体的大小，但是可能会在将来的SDK版本中去除改方法</span></span><br><span class="line"><span class="comment">//应该使用</span></span><br><span class="line">btn<span class="variable">.titleLabel</span><span class="variable">.font</span> = [<span class="built_in">UIFont</span> systemFontOfSize: <span class="number">14.0</span>];</span><br><span class="line">[btn seBackgroundColor: [<span class="built_in">UIColor</span> blueColor]];</span><br><span class="line"><span class="comment">//最后将按钮加入到指定视图superView</span></span><br><span class="line">[superView addSubview: btn];</span><br><span class="line"></span><br><span class="line">```objc</span><br><span class="line">btn = [[<span class="built_in">UIButton</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">5</span>,<span class="number">5</span>,<span class="number">200</span>,<span class="number">40</span>)];</span><br><span class="line"><span class="comment">// 这样初始化的button，文字默认颜色是白色的，所有如果背景也是白色的话，是看不到文字的，</span></span><br><span class="line">btn<span class="variable">.contentHorizontalAlignment</span> = <span class="built_in">UIControlContentHorizontalAlignmentLeft</span> ;<span class="comment">//设置文字位置，现设为居左，默认的是居中</span></span><br><span class="line">[btn setTitle:@“title” forState:<span class="built_in">UIControlStateNormal</span>];<span class="comment">// 添加文字</span></span><br><span class="line"><span class="comment">// 有些时候我们想让UIButton的title居左对齐，我们设置</span></span><br><span class="line">btn<span class="variable">.textLabel</span><span class="variable">.textAlignment</span> = <span class="built_in">UITextAlignmentLeft</span></span><br><span class="line"><span class="comment">// 是没有作用的，我们需要设置</span></span><br><span class="line">btn<span class="variable">.contentHorizontalAlignment</span> = <span class="built_in">UIControlContentHorizonAlignmentLeft</span>;</span><br><span class="line"><span class="comment">// 但是问题又出来，此时文字会紧贴到做边框，我们可以设置</span></span><br><span class="line">btn<span class="variable">.contentEdgeInsets</span> = <span class="built_in">UIEdgeInsetsMake</span>(<span class="number">0</span>,<span class="number">10</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"><span class="comment">// 使文字距离做边框保持10个像素的距离。</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="18-项目中需要注意的地方："><a href="#18-项目中需要注意的地方：" class="headerlink" title="18.项目中需要注意的地方："></a>18.项目中需要注意的地方：</h3><p>解决方法：<br>项目更新的时候(Documents 和 Library 会被保留)<br>沙盒路径中三个文件(苹果官方推荐)<br>1.Documents：用户产生的数据，都是一些比较重要的数据，比较小。这里面的数据会自动同步到Ituns(文件<br>不能太大，如果太大，可能上架时会被拒绝);<br>2.Library：1<caches>:电影，音乐，图片，报刊,电子书等等等  <2>Preferences文件夹(会被同步),配置文件。<br>3.tmp：每次应用重启动都会自动清空<br>4.app：(应用程序包) 系统隐藏的。</2></caches></p>
+<h3 id="19-取消ScrollView的反弹效果"><a href="#19-取消ScrollView的反弹效果" class="headerlink" title="19.取消ScrollView的反弹效果"></a>19.取消ScrollView的反弹效果</h3><p>解决方法：<br>self.scrollView.bounces = NO;</p>
+<h3 id="20-UIView的坐标转换"><a href="#20-UIView的坐标转换" class="headerlink" title="20.UIView的坐标转换"></a>20.UIView的坐标转换</h3><p>解决方法：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 将像素point由point所在视图转换到目标视图view中，返回在目标视图view中的像素值</span></span><br><span class="line">- (<span class="built_in">CGPoint</span>)convertPoint:(<span class="built_in">CGPoint</span>)point toView:(<span class="built_in">UIView</span> *)view;</span><br><span class="line"><span class="comment">// 将像素point从view中转换到当前视图中，返回在当前视图中的像素值</span></span><br><span class="line">- (<span class="built_in">CGPoint</span>)convertPoint:(<span class="built_in">CGPoint</span>)point fromView:(<span class="built_in">UIView</span> *)view;</span><br><span class="line"><span class="comment">// 将rect由rect所在视图转换到目标视图view中，返回在目标视图view中的rect</span></span><br><span class="line">- (<span class="built_in">CGRect</span>)convertRect:(<span class="built_in">CGRect</span>)rect toView:(<span class="built_in">UIView</span> *)view;</span><br><span class="line"><span class="comment">// 将rect从view中转换到当前视图中，返回在当前视图中的rect</span></span><br><span class="line">- (<span class="built_in">CGRect</span>)convertRect:(<span class="built_in">CGRect</span>)rect fromView:(<span class="built_in">UIView</span> *)view;</span><br><span class="line">例把<span class="built_in">UITableViewCell</span>中的subview(btn)的frame转换到 controllerA中</span><br><span class="line"><span class="comment">// controllerA 中有一个UITableView, UITableView里有多行UITableVieCell，cell上放有一个button</span></span><br><span class="line"><span class="comment">// 在controllerA中实现:</span></span><br><span class="line"><span class="built_in">CGRect</span> rc = [cell convertRect:cell<span class="variable">.btn</span><span class="variable">.frame</span> toView:<span class="keyword">self</span><span class="variable">.view</span>];</span><br><span class="line"><span class="comment">// 或</span></span><br><span class="line"><span class="built_in">CGRect</span> rc = [<span class="keyword">self</span><span class="variable">.view</span> convertRect:cell<span class="variable">.btn</span><span class="variable">.frame</span> fromView:cell];</span><br><span class="line"><span class="comment">// 此rc为btn在controllerA中的rect</span></span><br><span class="line"><span class="comment">// 或当已知btn时：</span></span><br><span class="line"><span class="built_in">CGRect</span> rc = [btn<span class="variable">.superview</span> convertRect:btn<span class="variable">.frame</span> toView:<span class="keyword">self</span><span class="variable">.view</span>];</span><br><span class="line"><span class="comment">// 或</span></span><br><span class="line"><span class="built_in">CGRect</span> rc = [<span class="keyword">self</span><span class="variable">.view</span> convertRect:btn<span class="variable">.frame</span> fromView:btn<span class="variable">.superview</span>];</span><br></pre></td></tr></table></figure></p>
+<h3 id="21-取得当前的点和之前的点，转换坐标系，判断当前点是否在视图内"><a href="#21-取得当前的点和之前的点，转换坐标系，判断当前点是否在视图内" class="headerlink" title="21.取得当前的点和之前的点，转换坐标系，判断当前点是否在视图内"></a>21.取得当前的点和之前的点，转换坐标系，判断当前点是否在视图内</h3><p>解决方法：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">CGPoint</span> currentPoint = [touch locationInView:<span class="keyword">self</span>];</span><br><span class="line"><span class="built_in">CGPoint</span> previousPoint = [touch previousLocationInView:<span class="keyword">self</span>];</span><br><span class="line">currentPoint = [<span class="keyword">self</span> convertPoint:currentPoint toView:_myView];</span><br><span class="line">_isInside = [_myView pointInside:currentPoint withEvent:event];</span><br></pre></td></tr></table></figure></p>
+<h3 id="22-处理键盘弹出时，输入框被遮挡的问题："><a href="#22-处理键盘弹出时，输入框被遮挡的问题：" class="headerlink" title="22.处理键盘弹出时，输入框被遮挡的问题："></a>22.处理键盘弹出时，输入框被遮挡的问题：</h3><p>解决方法：当键盘弹起时，系统会经过注册的观察者发出一个通知。<br>1.注册通知：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">NSNotificationCenter</span> *center = [<span class="built_in">NSNotificationCenter</span> defaultCenter];</span><br><span class="line">[center addObserver:<span class="keyword">self</span> selector:<span class="keyword">@selector</span>(keyBoardWillChangeAction:) name:<span class="built_in">UIKeyboardWillChangeFrameNotification</span> object:<span class="literal">nil</span>];</span><br></pre></td></tr></table></figure></p>
+<p>2.接受通知后调用方法：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)keyBoardWillChangeAction:(<span class="built_in">NSNotification</span> *)notiInfo &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    NSLog(@"%@“,notiInfo.name);</span></span><br><span class="line"><span class="comment">//    NSLog(@"%@",notiInfo.userInfo);</span></span><br><span class="line"><span class="comment">//    NSLog(@"%@",notiInfo.object);</span></span><br><span class="line">    <span class="built_in">CGRect</span> endUserInfoKey = [notiInfo<span class="variable">.userInfo</span>[<span class="built_in">UIKeyboardFrameEndUserInfoKey</span>] <span class="built_in">CGRectValue</span>];</span><br><span class="line">    <span class="built_in">CGFloat</span> endUsrY = endUserInfoKey<span class="variable">.origin</span><span class="variable">.y</span>;</span><br><span class="line">    <span class="built_in">CGFloat</span> finalEndUser = endUsrY - <span class="keyword">self</span><span class="variable">.view</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.height</span>;</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.view</span><span class="variable">.transform</span> = <span class="built_in">CGAffineTransformMakeTranslation</span>(<span class="number">0</span>, finalEndUser);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="23-高效设置圆角"><a href="#23-高效设置圆角" class="headerlink" title="23.高效设置圆角"></a>23.高效设置圆角</h3><p>解决方法：<br>如果需要将UIView的4个角全部都为圆角，做法相当简单，只需设置其Layer的cornerRadius属性即可（项目需要使用QuartzCore框架）。而若要指定某几个角（小于4）为圆角而别的不变时，这种方法就不好用了。并且会造成离屏渲染，参考<a href="http://www.reviewcode.cn/article.html?reviewId=7" target="_blank" rel="external">关于性能的一些问题</a></p>
+<p>对于这种情况，Stackoverflow上提供了几种解决方案。其中最简单优雅的方案，就是使用UIBezierPath。下面给出一段示例代码。<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">UIView</span> *view2 = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">120</span>, <span class="number">10</span>, <span class="number">80</span>, <span class="number">80</span>)];</span><br><span class="line">view2<span class="variable">.backgroundColor</span> = [<span class="built_in">UIColor</span> redColor]; [<span class="keyword">self</span><span class="variable">.view</span> addSubview:view2];</span><br><span class="line"><span class="built_in">UIBezierPath</span> *maskPath = [<span class="built_in">UIBezierPath</span> bezierPathWithRoundedRect:view2<span class="variable">.bounds</span> byRoundingCorners:<span class="built_in">UIRectCornerBottomLeft</span> | <span class="built_in">UIRectCornerBottomRight</span> cornerRadii:<span class="built_in">CGSizeMake</span>(<span class="number">10</span>, <span class="number">10</span>)];</span><br><span class="line"><span class="built_in">CAShapeLayer</span> *maskLayer = [[<span class="built_in">CAShapeLayer</span> alloc] init];</span><br><span class="line">maskLayer<span class="variable">.frame</span> = view2<span class="variable">.bounds</span>;</span><br><span class="line">maskLayer<span class="variable">.path</span> = maskPath<span class="variable">.CGPath</span>;</span><br><span class="line">view2<span class="variable">.layer</span><span class="variable">.mask</span> = maskLayer;</span><br></pre></td></tr></table></figure></p>
+<p>其中，<br><strong> byRoundingCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight </strong><br>指定了需要成为圆角的角。该参数是UIRectCorner类型的，可选的值有：</p>
+<ul>
+<li>UIRectCornerTopLeft</li>
+<li>UIRectCornerTopRight</li>
+<li>UIRectCornerBottomLeft</li>
+<li>UIRectCornerBottomRight</li>
+<li>UIRectCornerAllCorners</li>
+</ul>
+<p>从名字很容易看出来代表的意思，使用“|”来组合就好了。</p>
+<h3 id="24-DrawRect的注意事项："><a href="#24-DrawRect的注意事项：" class="headerlink" title="24.DrawRect的注意事项："></a>24.DrawRect的注意事项：</h3><p>解决方法：<br><strong> -(void)drawRect:(CGRect)rect </strong>中rect是bounds，绘制文字等操作时，用的是传进来的rect（bounds）而不是自己设定的带x，y坐标的rect<br>不能自己调用drawRect方法，而是用<strong> [self setNeedsDisplay]; </strong>让系统去调用。</p>
+<h3 id="25-多线程中更改刷新界面在主线程还是子线程？"><a href="#25-多线程中更改刷新界面在主线程还是子线程？" class="headerlink" title="25.多线程中更改刷新界面在主线程还是子线程？"></a>25.多线程中更改刷新界面在主线程还是子线程？</h3><p>解决方法：<br>主线程。在子线程中能更新的UI界面只是一个假象，实际上是子线程运行完毕，回到主线程继续执行UI更新的函数栈，由于时间很短，导致这个错觉。若子线程一直在执行，则主线程执行不了UI更新栈中的内容，UI界面也就不会更新。</p>
+<h3 id="26-Cell高度自适应："><a href="#26-Cell高度自适应：" class="headerlink" title="26.Cell高度自适应："></a>26.Cell高度自适应：</h3><p>解决方法：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">CGFloat</span>)tableView:(<span class="built_in">UITableView</span> *)tableView heightForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath &#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// _indexPathCell为点击需要刷新的indexPath</span></span><br><span class="line">    <span class="keyword">if</span> (_indexPathCell<span class="variable">.row</span> == indexPath<span class="variable">.row</span> &amp;&amp; _indexPathCell) &#123;</span><br><span class="line">        AYCommetModel *model = _mutableArrayOfCommentModel[indexPath<span class="variable">.row</span>];</span><br><span class="line">        <span class="built_in">NSString</span> *str = model<span class="variable">.content</span>;</span><br><span class="line">        <span class="comment">// 110为约束总长</span></span><br><span class="line">        <span class="keyword">float</span> textLabelWidth = kScreenWidth - <span class="number">110</span>;</span><br><span class="line">        <span class="built_in">CGSize</span> strSize = [str boundingRectWithSize:<span class="built_in">CGSizeMake</span>(textLabelWidth, MAXFLOAT) options:<span class="built_in">NSStringDrawingUsesLineFragmentOrigin</span> attributes:@&#123;<span class="built_in">NSFontAttributeName</span>:[<span class="built_in">UIFont</span> systemFontOfSize:<span class="number">15.0</span>]&#125; context:<span class="literal">nil</span>]<span class="variable">.size</span>;</span><br><span class="line">        <span class="comment">//增益 Cell高度减去一行文字的高度</span></span><br><span class="line">        <span class="keyword">float</span> offSet = <span class="number">70</span> - <span class="number">17.895</span>;</span><br><span class="line">        <span class="comment">//计算总高度</span></span><br><span class="line">        <span class="keyword">float</span> sumOfHeight = strSize<span class="variable">.height</span>  + offSet ;</span><br><span class="line"><span class="comment">//    NSLog(@"indePath.row = %ld , Size = %@,_sumOfHeight = %f",indexPath.row,NSStringFromCGSize(strSize),sumOfHeight);</span></span><br><span class="line">        <span class="keyword">return</span> sumOfHeight;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">70</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种方法其实并不是最好的，具体可以参考博主的这篇博客<a href="http://ayjkdev.top/2016/03/16/cell-with-masonry/">使用Masonry对cell布局</a></p>
+<h3 id="27-NSString转NSDictionary"><a href="#27-NSString转NSDictionary" class="headerlink" title="27.NSString转NSDictionary"></a>27.NSString转NSDictionary</h3><p>解决方法：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">NSData</span> *infoData = [mutableString dataUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br><span class="line">        <span class="built_in">NSDictionary</span> *infoDic = [<span class="built_in">NSJSONSerialization</span> JSONObjectWithData:infoData options:<span class="built_in">NSJSONReadingMutableContainers</span> error:<span class="literal">nil</span>];</span><br></pre></td></tr></table></figure></p>
+<p>转其他也类似，先转成NSData再转成其他的类。</p>
+<h3 id="28-从服务器GET回来的数据NSData有时候中文乱码。"><a href="#28-从服务器GET回来的数据NSData有时候中文乱码。" class="headerlink" title="28.从服务器GET回来的数据NSData有时候中文乱码。"></a>28.从服务器GET回来的数据NSData有时候中文乱码。</h3><p>解决方法：<br>先看清GET回来的包头,看清编码方式，有些为GBK编码的需要进行转换。<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">NSStringEncoding</span> enc = <span class="built_in">CFStringConvertEncodingToNSStringEncoding</span>(k<span class="built_in">CFStringEncodingGB_18030_2000</span>);</span><br><span class="line"><span class="built_in">NSMutableString</span> *mutableString = [[<span class="built_in">NSMutableString</span> alloc] initWithData:data encoding:enc];</span><br></pre></td></tr></table></figure></p>
+<h3 id="29-想要获取由服务器发回来的http头"><a href="#29-想要获取由服务器发回来的http头" class="headerlink" title="29.想要获取由服务器发回来的http头"></a>29.想要获取由服务器发回来的http头</h3><p>解决方法：<br>需要将NSURLResponse强转成NSHTTPURLResponse，比如status code 就调用 [httpUTLResponse statusCode]来获取。</p>
+<h3 id="30-UIButton设置Selected的问题："><a href="#30-UIButton设置Selected的问题：" class="headerlink" title="30.UIButton设置Selected的问题："></a>30.UIButton设置Selected的问题：</h3><p>解决方法：<br>当我们想创建一个自定义背景的按钮时，<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">UIButton</span>* btn = [<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonTypeCustom</span>];</span><br><span class="line">[btn setBackgroundImage:(<span class="built_in">UIImage</span>*) forState:<span class="built_in">UIControlStateNormal</span>];</span><br></pre></td></tr></table></figure></p>
+<p>如果我们想要一个selected的按钮，<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[btn setBackgroundImage:(<span class="built_in">UIImage</span>*) forState:<span class="built_in">UIControlStateSelected</span>];</span><br></pre></td></tr></table></figure></p>
+<p>但这样还是有个问题，当我们设置了btn.selected = YES后，再去点击按钮，<br>发现会变灰色，说明在这个状态下没设置我们的皮肤，<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[btn setBackgroundImage:(<span class="built_in">UIImage</span>*) forState:<span class="built_in">UIControlStateSelected</span> ｜ <span class="built_in">UIControlStateHighlighted</span>];</span><br></pre></td></tr></table></figure></p>
+<h3 id="31-BOOL和bool的区别"><a href="#31-BOOL和bool的区别" class="headerlink" title="31.BOOL和bool的区别"></a>31.BOOL和bool的区别</h3><p>解决方法：<br>说明：Objective-C 中的BOOL实际上是一种对带符号的字符类型（signed char）的类型定义（typedef），它使用8位的存储空间。通过#define指令把YES定义为1，NO定义为0。</p>
+<blockquote>
+<p>注意：Objective-C 并不会将BOOL作为仅能保存YES或NO值的真正布尔类型来处理。编译器仍将BOOL认作8位二进制数，YES 和 NO 值只是在习惯上的一种理解。<br>问题：如果不小心将一个大于1字节的整型值（比如short或int）赋给一个BOOL变量，那么只有低位字节会用作BOOL值。如果该低位字节刚好为0（比如8960，写成十六进制为0x2300），BOOL值将会被认作是0，即NO值。而对于bool类型，只有true和false的区别，即0为false，非0为true。<br>举例：<br>BOOL  b1=8960;  // 实际是 NO，因为8960换成十六进制为0x2300，BOOL 只有8位存储空间，取0x2300的低8位，00，所以是NO<br>bool  b2=8960;  //实际是true，因为bool类型，非0即为true。</p>
+</blockquote>
+<h3 id="32-iOS上-更改-状态栏-UIStatusBar-的颜色"><a href="#32-iOS上-更改-状态栏-UIStatusBar-的颜色" class="headerlink" title="32.iOS上 更改 状态栏(UIStatusBar)的颜色"></a>32.iOS上 更改 状态栏(UIStatusBar)的颜色</h3><p>解决方法：</p>
+<h4 id="1-plist设置statusBar"><a href="#1-plist设置statusBar" class="headerlink" title="1.plist设置statusBar"></a>1.plist设置statusBar</h4><p>在plist里增加一行 UIStatusBarStyle(或者是“Status bar style”也可以)，这里可以设置两个值，就是UIStatusBarStyleDefault 和 UIStatusBarStyleLightContent<br>这样在app启动的launch页显示的时候，statusBar的样式就是上面plist设置的风格。</p>
+<h4 id="2-程序代码里设置statusBar"><a href="#2-程序代码里设置statusBar" class="headerlink" title="2.程序代码里设置statusBar"></a>2.程序代码里设置statusBar</h4><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] setStatusBarStyle:<span class="built_in">UIStatusBarStyleLightContent</span>];</span><br></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//相对于上面的接口，这个接口可以动画的改变statusBar的前景色 </span></span><br><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] setStatusBarStyle:<span class="built_in">UIStatusBarStyleLightContent</span> animated:<span class="literal">YES</span>];</span><br></pre></td></tr></table></figure></p>
+<p>不仅如此，iOS还很贴心的在UIViewController也增加了几个接口，<br>目的是让状态栏根据当前显示的UIViewController来定制statusBar的前景部分。<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">UIStatusBarStyle</span>)preferredStatusBarStyle;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">UIViewController</span> *)childViewControllerForStatusBarStyle;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setNeedsStatusBarAppearanceUpdate</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">UIStatusBarStyle</span>)preferredStatusBarStyle:</span><br></pre></td></tr></table></figure></p>
+<p>在你自己的UIViewController里重写此方法，返回你需要的值(UIStatusBarStyleDefault 或者 UIStatusBarStyleLightContent)；</p>
+<blockquote>
+<p>注意：</p>
+<ul>
+<li>这里如果你只是简单的return一个固定的值，那么该UIViewController显示的时候，程序就会马上调用该方法，来改变statusBar的前景部分；</li>
+<li>如果在该UIViewController已经在显示在当前，你可能还要在当前页面不时的更改statusBar的前景色，那么，你首先需要调用下面的setNeedsStatusBarAppearanceUpdate方法(这个方法会通知系统去调用当前UIViewController的preferredStatusBarStyle方法)， 这个和UIView的setNeedsDisplay原理差不多(调用UIView对象的setNeedsDisplay方法后，系统会在下次页面刷新时，调用重绘该view，系统最快能1秒刷新60次页面，具体要看程序设置)。</li>
+</ul>
+</blockquote>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">UIViewController</span> *)childViewControllerForStatusBarStyle:</span><br></pre></td></tr></table></figure>
+<p>这个接口也很重要，默认返回值为nil。<br>当我们调用setNeedsStatusBarAppearanceUpdate时，系统会调用application.window的rootViewController的preferredStatusBarStyle方法，我们的程序里一般都是用UINavigationController做root，如果是这种情况，那我们自己的UIViewController里的preferredStatusBarStyle根本不会被调用；<br>这种情况下childViewControllerForStatusBarStyle就派上用场了，<br>我们要子类化一个UINavigationController，在这个子类里面重写childViewControllerForStatusBarStyle方法，如下：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">UIViewController</span> *)childViewControllerForStatusBarStyle&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">self</span><span class="variable">.topViewController</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码的意思就是说，不要调用我自己(就是UINavigationController)的preferredStatusBarStyle方法，而是去调用navigationController.topViewController的preferredStatusBarStyle方法，这样写的话，就能保证当前显示的UIViewController的preferredStatusBarStyle方法能影响statusBar的前景部分。</p>
+<p>另外，有时我们的当前显示的UIViewController可能有多个childViewController，重写当前UIViewController的childViewControllerForStatusBarStyle方法，让childViewController的preferredStatusBarStyle生效(当前UIViewController的preferredStatusBarStyle就不会被调用了)。</p>
+<p>简单来说，只要UIViewController重写的的childViewControllerForStatusBarStyle方法返回值不是nil，那么，UIViewController的preferredStatusBarStyle方法就不会被系统调用，系统会调用childViewControllerForStatusBarStyle方法返回的UIViewController的preferredStatusBarStyle方法。<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setNeedsStatusBarAppearanceUpdate:</span><br></pre></td></tr></table></figure></p>
+<p>让系统去调用application.window的rootViewController的preferredStatusBarStyle方法,如果rootViewController的childViewControllerForStatusBarStyle返回值不为nil，则参考上面的讲解。<br>设置statusBar的【背景部分】<br>背景部分，简单来说，就是背景色；改变方法有两种：<br>系统提供的方法<br>navigationBar的setBarTintColor接口，用此接口可改变statusBar的背景色</p>
+<blockquote>
+<p>注意：一旦你设置了navigationBar的- (void)setBackgroundImage:(UIImage *)backgroundImage forBarMetrics:(UIBarMetrics)barMetrics接口，那么上面的setBarTintColor接口就不能改变statusBar的背景色，statusBar的背景色就会变成纯黑色。</p>
+</blockquote>
+<p>另辟蹊径</p>
+<p>创建一个UIView，<br>设置该UIView的frame.size 和statusBar大小一样，<br>设置该UIView的frame.origin 为{0,-20},<br>设置该UIView的背景色为你希望的statusBar的颜色，<br>在navigationBar上addSubView该UIView即可。</p>
+<h3 id="33-Xcode7HTTP协议改为了HTTPS协议，导致应用不正常"><a href="#33-Xcode7HTTP协议改为了HTTPS协议，导致应用不正常" class="headerlink" title="33.Xcode7HTTP协议改为了HTTPS协议，导致应用不正常"></a>33.Xcode7HTTP协议改为了HTTPS协议，导致应用不正常</h3><p>解决方法：<br>在iOS9 beta1中，苹果将原http协议改成了https协议，使用 TLS1.2 SSL加密请求数据。<br>在info.plist中添加<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">key</span>&gt;</span>NSAppTransportSecurity<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">dict</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">key</span>&gt;</span>NSAllowsArbitraryLoads<span class="tag">&lt;/<span class="title">key</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">true</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dict</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="34-如何让TableView滚动到顶端："><a href="#34-如何让TableView滚动到顶端：" class="headerlink" title="34.如何让TableView滚动到顶端："></a>34.如何让TableView滚动到顶端：</h3><p>解决方法：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">//两种滚动到顶部的方法都可以</span></span><br><span class="line"><span class="comment">//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];</span></span><br><span class="line"><span class="comment">//    [_centerTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];</span></span><br><span class="line">    [_centerTableView setContentOffset:(<span class="built_in">CGPoint</span>)&#123;<span class="number">0</span>,<span class="number">0</span>&#125; animated:<span class="literal">YES</span>];</span><br></pre></td></tr></table></figure></p>
+<h3 id="35-在UINavigationController中设置问题"><a href="#35-在UINavigationController中设置问题" class="headerlink" title="35.在UINavigationController中设置问题"></a>35.在UINavigationController中设置问题</h3><p>解决方法：<br>只能在其中设置它的背景图。button和title在它对应的viewController中设置</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Questions/" rel="tag">#Questions</a>
+          
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/16/cell-with-masonry/" rel="next" title="使用Masonry对cell布局">
+                <i class="fa fa-chevron-left"></i> 使用Masonry对cell布局
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/25/ios-animation-circle-view/" rel="prev" title="一个水滴动效的pageController（一）">
+                一个水滴动效的pageController（一） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/03/18/solve-questions/"
+     data-title="新人在开发初期遇到的各种问题"
+     data-content=""
+     data-url="ayjkdev.top/2016/03/18/solve-questions/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/18/solve-questions/"
+           data-title="新人在开发初期遇到的各种问题" data-url="ayjkdev.top/2016/03/18/solve-questions/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrofo.com1.z0.glb.clouddn.com/touxiang.jpg"
+               alt="AYJk" />
+          <p class="site-author-name" itemprop="name">AYJk</p>
+          <p class="site-description motion-element" itemprop="description">Talk is cheap show me the code.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/AYJk" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/3001474217" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题排序"><span class="nav-number">2.</span> <span class="nav-text">问题排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-报错Switch-is-in-protect-scope"><span class="nav-number">2.1.</span> <span class="nav-text">1.报错Switch is in protect scope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用UITextView输入框上半部仍为空白"><span class="nav-number">2.2.</span> <span class="nav-text">2.使用UITextView输入框上半部仍为空白</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-在一个UIViewController中更改UITabBar的属性"><span class="nav-number">2.3.</span> <span class="nav-text">3.在一个UIViewController中更改UITabBar的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-在Navigation上自定义了右边按钮，如何取得该按钮对象。以及该按钮的属性设定。"><span class="nav-number">2.4.</span> <span class="nav-text">4.在Navigation上自定义了右边按钮，如何取得该按钮对象。以及该按钮的属性设定。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-在三级控制器中由UITabBarController控制的UINavigationCotroller中，不能通过"><span class="nav-number">2.5.</span> <span class="nav-text">5.在三级控制器中由UITabBarController控制的UINavigationCotroller中，不能通过</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-计算UITextView中的行数。"><span class="nav-number">2.6.</span> <span class="nav-text">6.计算UITextView中的行数。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-更改UISearchBar的cancel按钮显示文本。"><span class="nav-number">2.7.</span> <span class="nav-text">7.更改UISearchBar的cancel按钮显示文本。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-当同一-m文件中出现两个继承于-UIScrollView-的类并设置了代理，使用"><span class="nav-number">2.8.</span> <span class="nav-text">8.当同一.m文件中出现两个继承于 UIScrollView 的类并设置了代理，使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-UITableViewStylePlain-和-UITableViewStyleGrouped-的区别"><span class="nav-number">2.9.</span> <span class="nav-text">9.  UITableViewStylePlain 和 UITableViewStyleGrouped 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-隐藏返回按钮"><span class="nav-number">2.10.</span> <span class="nav-text">10.隐藏返回按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-取消导航栏返回按钮的title"><span class="nav-number">2.11.</span> <span class="nav-text">11.取消导航栏返回按钮的title</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-PCH文件的建立"><span class="nav-number">2.12.</span> <span class="nav-text">12.PCH文件的建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-自定义UIScrollView的开启PageEnable的翻页效果。"><span class="nav-number">2.13.</span> <span class="nav-text">13.自定义UIScrollView的开启PageEnable的翻页效果。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-JSON文件的读取"><span class="nav-number">2.14.</span> <span class="nav-text">14.JSON文件的读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-iOS7-tableviewcell上面有button，但是button的点击效果没有"><span class="nav-number">2.15.</span> <span class="nav-text">15.iOS7 tableviewcell上面有button，但是button的点击效果没有</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-设置"><span class="nav-number">2.15.1.</span> <span class="nav-text">1.设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-同时在-UITableViewCell-tableView-UITableView-tableView-cellForRowAtIndexPath-NSIndexPath-indexPath-代理方法中对scrollView把延迟触摸设置为NO即可"><span class="nav-number">2.15.2.</span> <span class="nav-text">2.同时在 (UITableViewCell )tableView:(UITableView )tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath 代理方法中对scrollView把延迟触摸设置为NO即可</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-UITableViewCell中的使用cell和cell-contentView的区别"><span class="nav-number">2.16.</span> <span class="nav-text">16.UITableViewCell中的使用cell和cell.contentView的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-设置button的title属性"><span class="nav-number">2.17.</span> <span class="nav-text">17.设置button的title属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-项目中需要注意的地方："><span class="nav-number">2.18.</span> <span class="nav-text">18.项目中需要注意的地方：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-取消ScrollView的反弹效果"><span class="nav-number">2.19.</span> <span class="nav-text">19.取消ScrollView的反弹效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-UIView的坐标转换"><span class="nav-number">2.20.</span> <span class="nav-text">20.UIView的坐标转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-取得当前的点和之前的点，转换坐标系，判断当前点是否在视图内"><span class="nav-number">2.21.</span> <span class="nav-text">21.取得当前的点和之前的点，转换坐标系，判断当前点是否在视图内</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-处理键盘弹出时，输入框被遮挡的问题："><span class="nav-number">2.22.</span> <span class="nav-text">22.处理键盘弹出时，输入框被遮挡的问题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-高效设置圆角"><span class="nav-number">2.23.</span> <span class="nav-text">23.高效设置圆角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-DrawRect的注意事项："><span class="nav-number">2.24.</span> <span class="nav-text">24.DrawRect的注意事项：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-多线程中更改刷新界面在主线程还是子线程？"><span class="nav-number">2.25.</span> <span class="nav-text">25.多线程中更改刷新界面在主线程还是子线程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26-Cell高度自适应："><span class="nav-number">2.26.</span> <span class="nav-text">26.Cell高度自适应：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#27-NSString转NSDictionary"><span class="nav-number">2.27.</span> <span class="nav-text">27.NSString转NSDictionary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28-从服务器GET回来的数据NSData有时候中文乱码。"><span class="nav-number">2.28.</span> <span class="nav-text">28.从服务器GET回来的数据NSData有时候中文乱码。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#29-想要获取由服务器发回来的http头"><span class="nav-number">2.29.</span> <span class="nav-text">29.想要获取由服务器发回来的http头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#30-UIButton设置Selected的问题："><span class="nav-number">2.30.</span> <span class="nav-text">30.UIButton设置Selected的问题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#31-BOOL和bool的区别"><span class="nav-number">2.31.</span> <span class="nav-text">31.BOOL和bool的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#32-iOS上-更改-状态栏-UIStatusBar-的颜色"><span class="nav-number">2.32.</span> <span class="nav-text">32.iOS上 更改 状态栏(UIStatusBar)的颜色</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-plist设置statusBar"><span class="nav-number">2.32.1.</span> <span class="nav-text">1.plist设置statusBar</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-程序代码里设置statusBar"><span class="nav-number">2.32.2.</span> <span class="nav-text">2.程序代码里设置statusBar</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#33-Xcode7HTTP协议改为了HTTPS协议，导致应用不正常"><span class="nav-number">2.33.</span> <span class="nav-text">33.Xcode7HTTP协议改为了HTTPS协议，导致应用不正常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#34-如何让TableView滚动到顶端："><span class="nav-number">2.34.</span> <span class="nav-text">34.如何让TableView滚动到顶端：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#35-在UINavigationController中设置问题"><span class="nav-number">2.35.</span> <span class="nav-text">35.在UINavigationController中设置问题</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AYJk</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"andyjk"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("nGglFqrTRATc78KLiS0hvlTK-gzGzoHsz", "uAFU5vFBwjjhtlNEknxC0dW8");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,969 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="OffScreen Rendered,iOS," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="AYJk的技术博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="前言离屏渲染是导致APP性能损失的一大问题，开发时应该尽可能的避免。所以趁着节假日花了一点时间写了一个工具类。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不触发离屏渲染的情况下设置圆角">
+<meta property="og:url" content="ayjkdev.top/2016/04/05/corner-radius-with-out-offscreen-rendered/index.html">
+<meta property="og:site_name" content="AYJk的技术博客">
+<meta property="og:description" content="前言离屏渲染是导致APP性能损失的一大问题，开发时应该尽可能的避免。所以趁着节假日花了一点时间写了一个工具类。">
+<meta property="og:image" content="http://7xrofo.com1.z0.glb.clouddn.com/IMG_064.PNG">
+<meta property="og:image" content="http://7xrofo.com1.z0.glb.clouddn.com/IMG_065.PNG">
+<meta property="og:updated_time" content="2016-05-08T09:27:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="不触发离屏渲染的情况下设置圆角">
+<meta name="twitter:description" content="前言离屏渲染是导致APP性能损失的一大问题，开发时应该尽可能的避免。所以趁着节假日花了一点时间写了一个工具类。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> 不触发离屏渲染的情况下设置圆角 | AYJk的技术博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?b3526e9e7e2243a0c3d22c2450007b87";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AYJk的技术博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">不管怎么样，我就是要漂移。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'NGKkuvyoFDrY9TyBKaKV','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                不触发离屏渲染的情况下设置圆角
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-05T23:08:51+08:00" content="2016-04-05">
+              2016-04-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Develop/" itemprop="url" rel="index">
+                    <span itemprop="name">Develop</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/05/corner-radius-with-out-offscreen-rendered/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/05/corner-radius-with-out-offscreen-rendered/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/05/corner-radius-with-out-offscreen-rendered/" class="leancloud_visitors" data-flag-title="不触发离屏渲染的情况下设置圆角">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>离屏渲染是导致APP性能损失的一大问题，开发时应该尽可能的避免。所以趁着节假日花了一点时间写了一个工具类。</p>
+<a id="more"></a>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>APP中通常使用 UITableView 来进行界面的展示，滑动时的流畅性很大程度上决定了一个APP的质量。这里首先使用Instruments来看离屏渲染的情况：</p>
+<p>使用 AYViewCorner</p>
+<p><img src="http://7xrofo.com1.z0.glb.clouddn.com/IMG_064.PNG" alt="使用AYViewCorner"></p>
+<p>使用 CornerRadius</p>
+<p><img src="http://7xrofo.com1.z0.glb.clouddn.com/IMG_065.PNG" alt="使用CornerRadius"></p>
+<p>假设APP中有大量需要展示圆角的图片，注意这里的前提是大量圆角图片或者是你已经能感觉到卡顿的情况下，有几种方案可以参考：</p>
+<h2 id="切图"><a href="#切图" class="headerlink" title="切图"></a>切图</h2><p>直接让美工把图片切成圆角进行显示，这是效率最高的一种方案，但是作为一个能gank全场的程序猿，能自己解决的事情绝不求人。<br>很多情况下需要用户上传图片进行显示，可以让服务端进行处理，但是作为一个…（我就不重复了）。</p>
+<h2 id="遮罩"><a href="#遮罩" class="headerlink" title="遮罩"></a>遮罩</h2><p>通过UIBezierPath画出曲线，然后创建一个CAShaperLayer的对象，将它赋值给需要添加圆角的控件的layer.mask。<br>这种方法是通过遮罩层<code>mask</code>实现，实际上就会导致离屏渲染。虽然能实现，但是大量圆角图片的时候效果很不理想，卡顿现象也很明显。</p>
+<h2 id="CoreGraphics绘制"><a href="#CoreGraphics绘制" class="headerlink" title="CoreGraphics绘制"></a>CoreGraphics绘制</h2><p>通过CoreGraphics框架去绘制一个圆角的图片，能够完全避免离屏渲染所带来的性能损失。通过<a href="https://github.com/AYJk/AYViewCorner/" target="_blank" rel="external">Demo</a>能很明显的发现差异。但是也存在着一些不足，比如圆角半径最好不要过大，过大会导致绘制出来的结果并不理想，由于是绘制上去的，所以背景色和图片只能存在一种，我这里优先保留了图片。</p>
+<h1 id="AYViewCorner用法"><a href="#AYViewCorner用法" class="headerlink" title="AYViewCorner用法"></a>AYViewCorner用法</h1><h2 id="UIButton"><a href="#UIButton" class="headerlink" title="UIButton"></a>UIButton</h2><p>如果你想要设置 UIButton 的圆角：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">UIButton</span> *testButton = [[<span class="built_in">UIButton</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">50</span>, <span class="number">5</span>, <span class="number">70</span>, <span class="number">30</span>)];</span><br><span class="line">[testButton setTitle:<span class="string">@"normal"</span> forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">[testButton setTitle:<span class="string">@"highlight"</span> forState:<span class="built_in">UIControlStateHighlighted</span>];</span><br><span class="line">[testButton ay_setCornerRadius:AYRadiusMake(<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>) setNormalImage:[<span class="built_in">UIImage</span> imageNamed:normalImage] highlightedImage:[<span class="built_in">UIImage</span> imageNamed:highlightedImage] disabledImage:<span class="literal">nil</span> selectedImage:<span class="literal">nil</span> backgroundColor:<span class="literal">nil</span>];</span><br><span class="line">[<span class="keyword">self</span><span class="variable">.contentView</span> addSubview:testButton];</span><br></pre></td></tr></table></figure></p>
+<p>Button中推荐用该方法去设置，包含了不同 UIControlState 下的不同图片设置，不需要的状态图设置为nil即可。<br>标题仍然按照系统提供的方法进行设置就OK。</p>
+<h2 id="UIView-UILabel"><a href="#UIView-UILabel" class="headerlink" title="UIView/UILabel"></a>UIView/UILabel</h2><p>如果你想要设置 UIView/UILabel 的圆角：</p>
+<h3 id="UIView"><a href="#UIView" class="headerlink" title="UIView"></a>UIView</h3><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">UIView</span> *colorView = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">240</span> , <span class="number">5</span>, <span class="number">100</span>, <span class="number">30</span>)];</span><br><span class="line">[colorView ay_setCornerRadius:AYRadiusMake(<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>) backgroundColor:[<span class="built_in">UIColor</span> redColor]];</span><br><span class="line">[<span class="keyword">self</span><span class="variable">.contentView</span> addSubview:colorView];</span><br></pre></td></tr></table></figure>
+<h3 id="UILabel"><a href="#UILabel" class="headerlink" title="UILabel"></a>UILabel</h3><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">UILabel</span> *testLabel = [[<span class="built_in">UILabel</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">130</span>, <span class="number">5</span>, <span class="number">100</span>, <span class="number">30</span>)];</span><br><span class="line">testLabel<span class="variable">.text</span> = <span class="string">@"LabelLabel"</span>;</span><br><span class="line">[testLabel ay_setCornerRadius:AYRadiusMake(<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>) backgroundColor:[<span class="built_in">UIColor</span> blueColor]];</span><br><span class="line">[<span class="keyword">self</span><span class="variable">.contentView</span> addSubview:testLabel];</span><br></pre></td></tr></table></figure>
+<h2 id="UIImageView"><a href="#UIImageView" class="headerlink" title="UIImageView"></a>UIImageView</h2><p>如果你想要设置 UIImageView 的圆角：<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">UIImageView</span> *imageView = [[<span class="built_in">UIImageView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">10</span>, <span class="number">5</span>, <span class="number">35</span>, <span class="number">30</span>)];</span><br><span class="line">imageView<span class="variable">.image</span> = [<span class="built_in">UIImage</span> imageNamed:image];</span><br><span class="line">[imageView ay_setCornerRadius:AYRadiusMake(<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>) backgroundImage:[<span class="built_in">UIImage</span> imageNamed:backgroundImage] backgroundColor:<span class="literal">nil</span> withContentMode:<span class="built_in">UIViewContentModeScaleToFill</span>];</span><br><span class="line">[<span class="keyword">self</span><span class="variable">.contentView</span> addSubview:imageView];</span><br></pre></td></tr></table></figure></p>
+<p>同时，如果你想设置 UIImageView 的 UIViewContentMode，建议调用下面的方法：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)ay_setCornerRadius:(AYRadius)cornerRadius backgroundImage:(<span class="built_in">UIImage</span> *)image backgroundColor:(<span class="built_in">UIColor</span> *)color withContentMode:(<span class="built_in">UIViewContentMode</span>)contentMode;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果同时设置图片和颜色，只会显示图片。</p>
+</blockquote>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>当项目中需要离屏渲染的地方不多时，性能的影响并不是很大，基本也能保持在60fps左右，但是一旦超过一定数目的圆角，滑动起来就会有明显的卡顿现象。所以，没必要为了不影响体验的情况下强行进行优化，这样做效果并不是很明显。只有当需要优化的时候采取一定的优化方案，才能得到最大的收益。</p>
+<h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><p>源代码已经上传至GitHub：<a href="https://github.com/AYJk/AYViewCorner/" target="_blank" rel="external">AYViewCorner</a>，如果觉得这个工具类还行，就顺手丢个star哦。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OffScreen-Rendered/" rel="tag">#OffScreen Rendered</a>
+          
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/03/bubbleview-like-qq/" rel="next" title="仿qq未读消息的气泡拖拽效果">
+                <i class="fa fa-chevron-left"></i> 仿qq未读消息的气泡拖拽效果
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/06/update-in-app-with-itunes-lookup/" rel="prev" title="iOS利用iTunesLookup检查更新">
+                iOS利用iTunesLookup检查更新 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/04/05/corner-radius-with-out-offscreen-rendered/"
+     data-title="不触发离屏渲染的情况下设置圆角"
+     data-content=""
+     data-url="ayjkdev.top/2016/04/05/corner-radius-with-out-offscreen-rendered/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/05/corner-radius-with-out-offscreen-rendered/"
+           data-title="不触发离屏渲染的情况下设置圆角" data-url="ayjkdev.top/2016/04/05/corner-radius-with-out-offscreen-rendered/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrofo.com1.z0.glb.clouddn.com/touxiang.jpg"
+               alt="AYJk" />
+          <p class="site-author-name" itemprop="name">AYJk</p>
+          <p class="site-description motion-element" itemprop="description">Talk is cheap show me the code.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/AYJk" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/3001474217" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">2.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#切图"><span class="nav-number">2.1.</span> <span class="nav-text">切图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遮罩"><span class="nav-number">2.2.</span> <span class="nav-text">遮罩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CoreGraphics绘制"><span class="nav-number">2.3.</span> <span class="nav-text">CoreGraphics绘制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AYViewCorner用法"><span class="nav-number">3.</span> <span class="nav-text">AYViewCorner用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UIButton"><span class="nav-number">3.1.</span> <span class="nav-text">UIButton</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UIView-UILabel"><span class="nav-number">3.2.</span> <span class="nav-text">UIView/UILabel</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UIView"><span class="nav-number">3.2.1.</span> <span class="nav-text">UIView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UILabel"><span class="nav-number">3.2.2.</span> <span class="nav-text">UILabel</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UIImageView"><span class="nav-number">3.3.</span> <span class="nav-text">UIImageView</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源代码"><span class="nav-number">5.</span> <span class="nav-text">源代码</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AYJk</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"andyjk"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("nGglFqrTRATc78KLiS0hvlTK-gzGzoHsz", "uAFU5vFBwjjhtlNEknxC0dW8");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+</body>
+</html>

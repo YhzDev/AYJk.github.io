@@ -1,0 +1,968 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PMElasticRefresh,iOS," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="AYJk的技术博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="PMElasticRefresh一款弹性动画的下拉刷新控件，已经发布在GitHub上了，可自行下载。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="弹性下拉刷新控件PMElasticRefresh">
+<meta property="og:url" content="ayjkdev.top/2016/05/08/pmelasticrefresh-achieve/index.html">
+<meta property="og:site_name" content="AYJk的技术博客">
+<meta property="og:description" content="PMElasticRefresh一款弹性动画的下拉刷新控件，已经发布在GitHub上了，可自行下载。">
+<meta property="og:image" content="http://7xrofo.com1.z0.glb.clouddn.com/2016-05-08%2017_11_56.gif">
+<meta property="og:updated_time" content="2016-05-09T02:32:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="弹性下拉刷新控件PMElasticRefresh">
+<meta name="twitter:description" content="PMElasticRefresh一款弹性动画的下拉刷新控件，已经发布在GitHub上了，可自行下载。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> 弹性下拉刷新控件PMElasticRefresh | AYJk的技术博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?b3526e9e7e2243a0c3d22c2450007b87";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AYJk的技术博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">不管怎么样，我就是要漂移。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'NGKkuvyoFDrY9TyBKaKV','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                弹性下拉刷新控件PMElasticRefresh
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-05-08T16:50:17+08:00" content="2016-05-08">
+              2016-05-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Develop/" itemprop="url" rel="index">
+                    <span itemprop="name">Develop</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/08/pmelasticrefresh-achieve/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/08/pmelasticrefresh-achieve/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/08/pmelasticrefresh-achieve/" class="leancloud_visitors" data-flag-title="弹性下拉刷新控件PMElasticRefresh">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="PMElasticRefresh"><a href="#PMElasticRefresh" class="headerlink" title="PMElasticRefresh"></a>PMElasticRefresh</h1><p>一款弹性动画的下拉刷新控件，已经发布在<a href="https://github.com/PoisonousMilk/PMElasticRefresh" target="_blank" rel="external">GitHub</a>上了，可自行下载。</p>
+<a id="more"></a>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><h2 id="PMElasticRefresh-1"><a href="#PMElasticRefresh-1" class="headerlink" title="PMElasticRefresh"></a>PMElasticRefresh</h2><p>写这个控件是因为公司设计某一天发给我一张Gif效果图并对我说：“来小伙子，咱们玩点好玩的。”表示彻底被骗了，我以为可以出去浪了，说好的好玩的呢。。。<br>言归正传，先看下效果图吧：<br><img src="http://7xrofo.com1.z0.glb.clouddn.com/2016-05-08%2017_11_56.gif" alt="动画效果"></p>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>在tableView上添加一个PMElasticView，在这个View上进行动画的绘制。<br>PMElasticView上的动画绘制分为三部分：<br>1&gt; 第一部分为下拉时的天蓝色背景，下拉超过动画最大设定距离，抬手时最下面的线条会有回弹效果。<br>2&gt; 第二部分为原型白色小球的上升动画。<br>3&gt; 第三部分为环绕白色小球的圆环动画。</p>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="下拉背景"><a href="#下拉背景" class="headerlink" title="下拉背景"></a>下拉背景</h2><p>tableView上添加PMElasticView是通过runtime运行时进行添加。将当前的tableView绑定到PMElasticView上的bindingScrollView上使用KVO监听contentOffset。通过使用UIBezierPath进行绘制</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">CGPathRef</span>)calculateAnimaPathWithOriginY:(<span class="built_in">CGFloat</span>)originY &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">CGPoint</span> topLeftPoint = <span class="built_in">CGPointMake</span>(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">CGPoint</span> bottomLeftPoint = <span class="built_in">CGPointMake</span>(<span class="number">0</span>, <span class="keyword">self</span><span class="variable">.offSet_Y</span> &lt;= AnimationDISTANCE ? <span class="number">100</span> : originY);</span><br><span class="line">    <span class="built_in">CGPoint</span> controlPoint = <span class="built_in">CGPointMake</span>(<span class="keyword">self</span><span class="variable">.bindingScrollView</span><span class="variable">.bounds</span><span class="variable">.size</span><span class="variable">.width</span> * <span class="number">.5</span>, originY);</span><br><span class="line">    <span class="built_in">CGPoint</span> bottomRightPoint = <span class="built_in">CGPointMake</span>(<span class="keyword">self</span><span class="variable">.bindingScrollView</span><span class="variable">.bounds</span><span class="variable">.size</span><span class="variable">.width</span>, <span class="keyword">self</span><span class="variable">.offSet_Y</span> &lt;= AnimationDISTANCE ? <span class="number">100</span> : originY);</span><br><span class="line">    <span class="built_in">CGPoint</span> topRightPoint = <span class="built_in">CGPointMake</span>(<span class="keyword">self</span><span class="variable">.bindingScrollView</span><span class="variable">.bounds</span><span class="variable">.size</span><span class="variable">.width</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">UIBezierPath</span> *bezierPath = [<span class="built_in">UIBezierPath</span> bezierPath];</span><br><span class="line">    [bezierPath moveToPoint:topLeftPoint];</span><br><span class="line">    [bezierPath addLineToPoint:bottomLeftPoint];</span><br><span class="line">    [bezierPath addQuadCurveToPoint:bottomRightPoint controlPoint:controlPoint];</span><br><span class="line">    [bezierPath addLineToPoint:topRightPoint];</span><br><span class="line">    [bezierPath addLineToPoint:topLeftPoint];</span><br><span class="line">    <span class="keyword">return</span> bezierPath<span class="variable">.CGPath</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>controlPoint用于控制产生弧形线条。当达到最大动画距离时，bottomLeftPoint和bottomRightPoint两个点Y坐标恒定等于100。controlPoint的Y坐标继续跟随下拉距离变化。</p>
+<p>松手后KVO中判断<code>isDrag</code>，若为NO，则调用</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)elasticLayerAnimation &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">self</span><span class="variable">.ballLayer</span><span class="variable">.hidden</span> = <span class="literal">NO</span>;</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.lineLayer</span><span class="variable">.hidden</span> = <span class="literal">NO</span>;</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.elasticShaperLayer</span><span class="variable">.path</span> = [<span class="keyword">self</span> calculateAnimaPathWithOriginY:ABS(AnimationDISTANCE)];</span><br><span class="line">    <span class="built_in">NSArray</span> *pathValues = @[</span><br><span class="line">                           (__bridge <span class="keyword">id</span>)[<span class="keyword">self</span> calculateAnimaPathWithOriginY:ABS(<span class="keyword">self</span><span class="variable">.offSet_Y</span>)],</span><br><span class="line">                           (__bridge <span class="keyword">id</span>)[<span class="keyword">self</span> calculateAnimaPathWithOriginY:ABS(AnimationDISTANCE) * <span class="number">0.7</span>],</span><br><span class="line">                           (__bridge <span class="keyword">id</span>)[<span class="keyword">self</span> calculateAnimaPathWithOriginY:ABS(AnimationDISTANCE) * <span class="number">1.3</span>],</span><br><span class="line">                           (__bridge <span class="keyword">id</span>)[<span class="keyword">self</span> calculateAnimaPathWithOriginY:ABS(AnimationDISTANCE) * <span class="number">0.9</span>],</span><br><span class="line">                           (__bridge <span class="keyword">id</span>)[<span class="keyword">self</span> calculateAnimaPathWithOriginY:ABS(AnimationDISTANCE) * <span class="number">1.1</span>],</span><br><span class="line">                           (__bridge <span class="keyword">id</span>)[<span class="keyword">self</span> calculateAnimaPathWithOriginY:ABS(AnimationDISTANCE)]</span><br><span class="line">                           ];</span><br><span class="line">    <span class="built_in">CAKeyframeAnimation</span> *elasticAnimation = [<span class="built_in">CAKeyframeAnimation</span> animationWithKeyPath:<span class="string">@"path"</span>];</span><br><span class="line">    elasticAnimation<span class="variable">.values</span> = pathValues;</span><br><span class="line">    elasticAnimation<span class="variable">.timingFunction</span> = [<span class="built_in">CAMediaTimingFunction</span> functionWithName:k<span class="built_in">CAMediaTimingFunctionLinear</span>];</span><br><span class="line">    elasticAnimation<span class="variable">.duration</span> = <span class="number">1</span>;</span><br><span class="line">    elasticAnimation<span class="variable">.fillMode</span> = k<span class="built_in">CAFillModeForwards</span>;</span><br><span class="line">    elasticAnimation<span class="variable">.removedOnCompletion</span> = <span class="literal">NO</span>;</span><br><span class="line">    elasticAnimation<span class="variable">.delegate</span> = <span class="keyword">self</span>;</span><br><span class="line">    [<span class="keyword">self</span><span class="variable">.elasticShaperLayer</span> addAnimation:elasticAnimation forKey:<span class="string">@"elasticAnimation"</span>];</span><br><span class="line">    [<span class="keyword">self</span><span class="variable">.ballLayer</span> startAnimation];</span><br><span class="line">    [<span class="keyword">self</span><span class="variable">.lineLayer</span> startAnimation];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>自定义Layer动画完成毕竟的弹性回调效果，(__bridge id)用于ARC下连接OC对象和CoreFoundation对象的桥接。</p>
+<h2 id="圆形小球"><a href="#圆形小球" class="headerlink" title="圆形小球"></a>圆形小球</h2><p>小球通过UIBezierPath绘制</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)configShape &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">self</span><span class="variable">.hidden</span> = <span class="literal">YES</span>;</span><br><span class="line">    <span class="built_in">CGPoint</span> arcCenterPoint = <span class="built_in">CGPointMake</span>(<span class="keyword">self</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.width</span> * <span class="number">.5</span>, <span class="keyword">self</span><span class="variable">.animationHeight</span> + <span class="keyword">self</span><span class="variable">.bounds</span><span class="variable">.size</span><span class="variable">.height</span> * <span class="number">.5</span>);</span><br><span class="line">    <span class="built_in">CGFloat</span> arcRadius = <span class="keyword">self</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.width</span> * <span class="number">.5</span>;</span><br><span class="line">    <span class="built_in">CGFloat</span> arcStartAngle = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">CGFloat</span> arcEndAngle =  M_PI * <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">UIBezierPath</span> *bezierPath = [<span class="built_in">UIBezierPath</span> bezierPathWithArcCenter:arcCenterPoint radius:arcRadius startAngle:arcStartAngle endAngle:arcEndAngle clockwise:<span class="literal">YES</span>];</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.path</span> = bezierPath<span class="variable">.CGPath</span>;</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.fillColor</span> = <span class="keyword">self</span><span class="variable">.ballColor</span><span class="variable">.CGColor</span>;</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.strokeEnd</span> = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>动画是通过CoreAnimation实现，刷新开始时从下往上移动，结束刷新从上往下移动并隐藏。</p>
+<h2 id="圆环"><a href="#圆环" class="headerlink" title="圆环"></a>圆环</h2><p>同样也是通过UIBezierPath绘制</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)configShape &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">CGPoint</span> arcCenterPoint = <span class="built_in">CGPointMake</span>(<span class="keyword">self</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.width</span> * <span class="number">.5</span>, <span class="keyword">self</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.height</span> * <span class="number">.5</span>);</span><br><span class="line">    <span class="built_in">CGFloat</span> arcRadius = <span class="keyword">self</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.width</span> * <span class="number">.5</span> * <span class="number">1.15</span>;</span><br><span class="line">    <span class="built_in">CGFloat</span> arcStartAngle = -M_PI_2;</span><br><span class="line">    <span class="built_in">CGFloat</span> arcEndAngle = M_PI * <span class="number">2</span> - M_PI_2 + M_PI / <span class="number">8.0</span>;</span><br><span class="line">    <span class="built_in">UIBezierPath</span> *bezierPath = [<span class="built_in">UIBezierPath</span> bezierPathWithArcCenter:arcCenterPoint radius:arcRadius startAngle:arcStartAngle endAngle:arcEndAngle clockwise:<span class="literal">YES</span>];</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.path</span> = bezierPath<span class="variable">.CGPath</span>;</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.fillColor</span> = <span class="literal">nil</span>;</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.strokeColor</span> = <span class="keyword">self</span><span class="variable">.arcStrokeColor</span><span class="variable">.CGColor</span>;</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.lineWidth</span> = <span class="number">3.0</span>;</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.lineCap</span> = k<span class="built_in">CALineCapRound</span>;</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.strokeStart</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.strokeEnd</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">self</span><span class="variable">.hidden</span> = <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>动画为组合动画，一个旋转效果、一个控制stroke的动画。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)startAnimation &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">self</span><span class="variable">.hidden</span> = <span class="literal">NO</span>;</span><br><span class="line">    <span class="built_in">CABasicAnimation</span> *rotateAnimation = [<span class="built_in">CABasicAnimation</span> animationWithKeyPath:<span class="string">@"transform.rotation.z"</span>];</span><br><span class="line">    rotateAnimation<span class="variable">.fromValue</span> = @(<span class="number">0</span>);</span><br><span class="line">    rotateAnimation<span class="variable">.toValue</span> = @(<span class="number">2</span> * M_PI);</span><br><span class="line">    rotateAnimation<span class="variable">.duration</span> = <span class="number">1</span>;</span><br><span class="line">    rotateAnimation<span class="variable">.fillMode</span> = k<span class="built_in">CAFillModeForwards</span>;</span><br><span class="line">    rotateAnimation<span class="variable">.removedOnCompletion</span> = <span class="literal">NO</span>;</span><br><span class="line">    rotateAnimation<span class="variable">.timingFunction</span> = [<span class="built_in">CAMediaTimingFunction</span> functionWithName:k<span class="built_in">CAMediaTimingFunctionLinear</span>];</span><br><span class="line">    rotateAnimation<span class="variable">.repeatCount</span> = HUGE;</span><br><span class="line">    [<span class="keyword">self</span> addAnimation:rotateAnimation forKey:<span class="string">@"rotateAnimation"</span>];</span><br><span class="line">    [<span class="keyword">self</span> strokeEndAnimation];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>strokeEnd动画：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)strokeEndAnimation &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">CABasicAnimation</span> *strokeEndAnimation = [<span class="built_in">CABasicAnimation</span> animationWithKeyPath:<span class="string">@"strokeEnd"</span>];</span><br><span class="line">    strokeEndAnimation<span class="variable">.fromValue</span> = @(<span class="number">0</span>);</span><br><span class="line">    strokeEndAnimation<span class="variable">.toValue</span> = @(<span class="number">.95</span>);</span><br><span class="line">    strokeEndAnimation<span class="variable">.timingFunction</span> = [<span class="built_in">CAMediaTimingFunction</span> functionWithName:k<span class="built_in">CAMediaTimingFunctionEaseInEaseOut</span>];</span><br><span class="line">    strokeEndAnimation<span class="variable">.duration</span> = <span class="number">2</span>;</span><br><span class="line">    strokeEndAnimation<span class="variable">.repeatCount</span> = <span class="number">1</span>;</span><br><span class="line">    strokeEndAnimation<span class="variable">.fillMode</span> = k<span class="built_in">CAFillModeForwards</span>;</span><br><span class="line">    strokeEndAnimation<span class="variable">.removedOnCompletion</span> = <span class="literal">NO</span>;</span><br><span class="line">    strokeEndAnimation<span class="variable">.delegate</span> = <span class="keyword">self</span>;</span><br><span class="line">    [<span class="keyword">self</span> addAnimation:strokeEndAnimation forKey:<span class="string">@"strokeEndAnimation"</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后通过代码方法，当strokeEnd动画结束后执行strokeStart动画。</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)strokeStartAnimation &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">CABasicAnimation</span> *strokeStartAnimation = [<span class="built_in">CABasicAnimation</span> animationWithKeyPath:<span class="string">@"strokeStart"</span>];</span><br><span class="line">    strokeStartAnimation<span class="variable">.fromValue</span> = @(<span class="number">0</span>);</span><br><span class="line">    strokeStartAnimation<span class="variable">.toValue</span> = @(<span class="number">.95</span>);</span><br><span class="line">    strokeStartAnimation<span class="variable">.timingFunction</span> = [<span class="built_in">CAMediaTimingFunction</span> functionWithName:k<span class="built_in">CAMediaTimingFunctionEaseInEaseOut</span>];</span><br><span class="line">    strokeStartAnimation<span class="variable">.duration</span> = <span class="number">2</span>;</span><br><span class="line">    strokeStartAnimation<span class="variable">.repeatCount</span> = <span class="number">1</span>;</span><br><span class="line">    strokeStartAnimation<span class="variable">.fillMode</span> = k<span class="built_in">CAFillModeForwards</span>;</span><br><span class="line">    strokeStartAnimation<span class="variable">.removedOnCompletion</span> = <span class="literal">NO</span>;</span><br><span class="line">    strokeStartAnimation<span class="variable">.delegate</span> = <span class="keyword">self</span>;</span><br><span class="line">    [<span class="keyword">self</span> addAnimation:strokeStartAnimation forKey:<span class="string">@"strokeStartAnimation"</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代理方法中控制动画：</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)animationDidStop:(<span class="built_in">CAAnimation</span> *)anim finished:(<span class="built_in">BOOL</span>)flag &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">        <span class="built_in">CABasicAnimation</span> *basicAnimation = (<span class="built_in">CABasicAnimation</span> *)anim;</span><br><span class="line">        <span class="keyword">if</span> ([basicAnimation<span class="variable">.keyPath</span> isEqualToString:<span class="string">@"strokeEnd"</span>]) &#123;</span><br><span class="line">            [<span class="keyword">self</span> strokeStartAnimation];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> ([basicAnimation<span class="variable">.keyPath</span> isEqualToString:<span class="string">@"strokeStart"</span>])&#123;</span><br><span class="line">            [<span class="keyword">self</span> removeAnimationForKey:<span class="string">@"strokeStartAnimation"</span>];</span><br><span class="line">            [<span class="keyword">self</span> removeAnimationForKey:<span class="string">@"strokeEndAnimation"</span>];</span><br><span class="line">            [<span class="keyword">self</span> strokeEndAnimation];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>使用非常简单<br>导入<strong>#import “PMElasticRefresh.h”</strong>头文件后调用方法向tableView添加动画</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span><span class="variable">.mainTableView</span> pm_RefreshHeaderWithBlock:^&#123;</span><br><span class="line">   </span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"refreshBlock"</span>);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p>完成数据读取，结束刷新动画时调用方法</p>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span><span class="variable">.mainTableView</span> endRefresh];</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>附上GitHub地址：<a href="https://github.com/PoisonousMilk/PMElasticRefresh" target="_blank" rel="external">PMElasticRefresh</a>,下载运行即可。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PMElasticRefresh/" rel="tag">#PMElasticRefresh</a>
+          
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/06/update-in-app-with-itunes-lookup/" rel="next" title="iOS利用iTunesLookup检查更新">
+                <i class="fa fa-chevron-left"></i> iOS利用iTunesLookup检查更新
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/05/08/pmelasticrefresh-achieve/"
+     data-title="弹性下拉刷新控件PMElasticRefresh"
+     data-content=""
+     data-url="ayjkdev.top/2016/05/08/pmelasticrefresh-achieve/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/08/pmelasticrefresh-achieve/"
+           data-title="弹性下拉刷新控件PMElasticRefresh" data-url="ayjkdev.top/2016/05/08/pmelasticrefresh-achieve/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrofo.com1.z0.glb.clouddn.com/touxiang.jpg"
+               alt="AYJk" />
+          <p class="site-author-name" itemprop="name">AYJk</p>
+          <p class="site-description motion-element" itemprop="description">Talk is cheap show me the code.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/AYJk" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/3001474217" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PMElasticRefresh"><span class="nav-number">1.</span> <span class="nav-text">PMElasticRefresh</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">2.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PMElasticRefresh-1"><span class="nav-number">2.1.</span> <span class="nav-text">PMElasticRefresh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构"><span class="nav-number">2.2.</span> <span class="nav-text">结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下拉背景"><span class="nav-number">3.1.</span> <span class="nav-text">下拉背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆形小球"><span class="nav-number">3.2.</span> <span class="nav-text">圆形小球</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆环"><span class="nav-number">3.3.</span> <span class="nav-text">圆环</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">4.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AYJk</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"andyjk"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("nGglFqrTRATc78KLiS0hvlTK-gzGzoHsz", "uAFU5vFBwjjhtlNEknxC0dW8");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+</body>
+</html>
