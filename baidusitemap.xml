@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>ayjkdev.top/2016/05/09/solve-xcode-error/</loc>
+    <lastmod>2016-05-09T03:02:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>解决Xcode报错</title>
+        <pubTime>2016-05-09T02:47:46.000Z</pubTime>
+        
+        <tag>Error</tag>
+         
+        <tag>Xcode</tag>
+         
+         
+           
+             
+              <breadCrumb title="Develop" url="ayjkdev.top/categories/Develop/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>ayjkdev.top/2016/05/08/pmelasticrefresh-achieve/</loc>
     <lastmod>2016-05-09T02:32:13.000Z</lastmod>
     <data>
@@ -27,7 +49,7 @@
     
   <url>
     <loc>ayjkdev.top/2016/04/05/corner-radius-with-out-offscreen-rendered/</loc>
-    <lastmod>2016-05-08T09:27:53.000Z</lastmod>
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
     <data>
         <display>
         <title>不触发离屏渲染的情况下设置圆角</title>
@@ -48,38 +70,17 @@
 
     
   <url>
-    <loc>ayjkdev.top/2016/04/06/update-in-app-with-itunes-lookup/</loc>
-    <lastmod>2016-04-07T15:30:44.000Z</lastmod>
+    <loc>ayjkdev.top/2016/03/18/solve-questions/</loc>
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
     <data>
         <display>
-        <title>iOS利用iTunesLookup检查更新</title>
-        <pubTime>2016-04-06T13:41:59.000Z</pubTime>
+        <title>新人在开发初期遇到的各种问题</title>
+        <pubTime>2016-03-18T01:19:59.000Z</pubTime>
         
+        <tag>Questions</tag>
+         
         <tag>iOS</tag>
          
-        <tag>iTunesLookup</tag>
-         
-         
-           
-             
-              <breadCrumb title="Develop" url="ayjkdev.top/categories/Develop/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>ayjkdev.top/2016/01/10/cocoapods-questions/</loc>
-    <lastmod>2016-04-03T11:41:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>CocoaPods中一些问题的解决</title>
-        <pubTime>2016-01-10T01:53:35.000Z</pubTime>
-        
-        <tag>CocoaPods - iOS</tag>
-         
          
            
              
@@ -91,21 +92,43 @@
 
     
   <url>
-    <loc>ayjkdev.top/2016/03/16/cell-with-masonry/</loc>
-    <lastmod>2016-04-03T11:38:59.000Z</lastmod>
+    <loc>ayjkdev.top/2016/04/02/slide-menu-ios/</loc>
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
     <data>
         <display>
-        <title>使用Masonry对cell布局</title>
-        <pubTime>2016-03-15T16:40:50.000Z</pubTime>
+        <title>实现带动画的侧边菜单</title>
+        <pubTime>2016-04-02T08:43:53.000Z</pubTime>
         
-        <tag>AutoLayout - iOS</tag>
+        <tag>Animation</tag>
          
-        <tag>Masonry</tag>
+        <tag>SlideMenu</tag>
+         
+        <tag>iOS</tag>
          
          
            
              
               <breadCrumb title="Develop" url="ayjkdev.top/categories/Develop/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>ayjkdev.top/2016/01/07/use-hexo/</loc>
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>开始Hexo的第一天</title>
+        <pubTime>2016-01-07T07:12:05.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Life" url="ayjkdev.top/categories/Life/"/>
           
         </display>
     </data>
@@ -114,7 +137,7 @@
     
   <url>
     <loc>ayjkdev.top/2016/03/25/ios-animation-circle-view/</loc>
-    <lastmod>2016-04-03T11:38:48.000Z</lastmod>
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
     <data>
         <display>
         <title>一个水滴动效的pageController（一）</title>
@@ -138,7 +161,7 @@
     
   <url>
     <loc>ayjkdev.top/2016/03/31/ios-anima-page-control/</loc>
-    <lastmod>2016-04-03T11:38:41.000Z</lastmod>
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
     <data>
         <display>
         <title>一个水滴动效的pageController（二）</title>
@@ -161,8 +184,72 @@
 
     
   <url>
+    <loc>ayjkdev.top/2016/04/06/update-in-app-with-itunes-lookup/</loc>
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>iOS利用iTunesLookup检查更新</title>
+        <pubTime>2016-04-06T13:41:59.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+        <tag>iTunesLookup</tag>
+         
+         
+           
+             
+              <breadCrumb title="Develop" url="ayjkdev.top/categories/Develop/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>ayjkdev.top/2016/01/10/cocoapods-questions/</loc>
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>CocoaPods中一些问题的解决</title>
+        <pubTime>2016-01-10T01:53:35.000Z</pubTime>
+        
+        <tag>CocoaPods - iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Develop" url="ayjkdev.top/categories/Develop/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>ayjkdev.top/2016/03/16/cell-with-masonry/</loc>
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>使用Masonry对cell布局</title>
+        <pubTime>2016-03-15T16:40:50.000Z</pubTime>
+        
+        <tag>AutoLayout - iOS</tag>
+         
+        <tag>Masonry</tag>
+         
+         
+           
+             
+              <breadCrumb title="Develop" url="ayjkdev.top/categories/Develop/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>ayjkdev.top/2016/04/03/bubbleview-like-qq/</loc>
-    <lastmod>2016-04-03T11:36:06.000Z</lastmod>
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
     <data>
         <display>
         <title>仿qq未读消息的气泡拖拽效果</title>
@@ -185,54 +272,8 @@
 
     
   <url>
-    <loc>ayjkdev.top/2016/04/02/slide-menu-ios/</loc>
-    <lastmod>2016-04-02T09:10:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>实现带动画的侧边菜单</title>
-        <pubTime>2016-04-02T08:43:53.000Z</pubTime>
-        
-        <tag>Animation</tag>
-         
-        <tag>SlideMenu</tag>
-         
-        <tag>iOS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Develop" url="ayjkdev.top/categories/Develop/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>ayjkdev.top/2016/03/18/solve-questions/</loc>
-    <lastmod>2016-03-28T11:10:57.000Z</lastmod>
-    <data>
-        <display>
-        <title>新人在开发初期遇到的各种问题</title>
-        <pubTime>2016-03-18T01:19:59.000Z</pubTime>
-        
-        <tag>Questions</tag>
-         
-        <tag>iOS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Develop" url="ayjkdev.top/categories/Develop/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>ayjkdev.top/2016/02/20/answer-in-group/</loc>
-    <lastmod>2016-03-28T11:10:57.000Z</lastmod>
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
     <data>
         <display>
         <title>在交流群中的一次作答</title>
@@ -257,23 +298,4 @@
     
     
     
-  <url>
-    <loc>ayjkdev.top/2016/01/07/use-hexo/</loc>
-    <lastmod>2016-03-18T04:40:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>开始Hexo的第一天</title>
-        <pubTime>2016-01-07T07:12:05.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Life" url="ayjkdev.top/categories/Life/"/>
-          
-        </display>
-    </data>
-    </url>
-
 </urlset>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>ayjkdev.top/2016/05/09/solve-xcode-error/</loc>
+    
+    <lastmod>2016-05-09T03:02:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>ayjkdev.top/2016/05/08/pmelasticrefresh-achieve/</loc>
     
     <lastmod>2016-05-09T02:32:13.000Z</lastmod>
@@ -11,105 +18,105 @@
   <url>
     <loc>ayjkdev.top/2016/04/05/corner-radius-with-out-offscreen-rendered/</loc>
     
-    <lastmod>2016-05-08T09:27:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>ayjkdev.top/2016/04/06/update-in-app-with-itunes-lookup/</loc>
-    
-    <lastmod>2016-04-07T15:30:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>ayjkdev.top/about/index.html</loc>
-    
-    <lastmod>2016-04-06T11:30:43.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>ayjkdev.top/2016/01/10/cocoapods-questions/</loc>
-    
-    <lastmod>2016-04-03T11:41:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>ayjkdev.top/2016/03/16/cell-with-masonry/</loc>
-    
-    <lastmod>2016-04-03T11:38:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>ayjkdev.top/2016/03/25/ios-animation-circle-view/</loc>
-    
-    <lastmod>2016-04-03T11:38:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>ayjkdev.top/2016/03/31/ios-anima-page-control/</loc>
-    
-    <lastmod>2016-04-03T11:38:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>ayjkdev.top/2016/04/03/bubbleview-like-qq/</loc>
-    
-    <lastmod>2016-04-03T11:36:06.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>ayjkdev.top/2016/04/02/slide-menu-ios/</loc>
-    
-    <lastmod>2016-04-02T09:10:11.000Z</lastmod>
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>ayjkdev.top/2016/03/18/solve-questions/</loc>
     
-    <lastmod>2016-03-28T11:10:57.000Z</lastmod>
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>ayjkdev.top/2016/02/20/answer-in-group/</loc>
+    <loc>ayjkdev.top/2016/04/02/slide-menu-ios/</loc>
     
-    <lastmod>2016-03-28T11:10:57.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>ayjkdev.top/tags/index.html</loc>
-    
-    <lastmod>2016-03-18T04:40:11.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>ayjkdev.top/categories/index.html</loc>
-    
-    <lastmod>2016-03-18T04:40:11.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>ayjkdev.top/archives/index.html</loc>
-    
-    <lastmod>2016-03-18T04:40:11.000Z</lastmod>
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>ayjkdev.top/2016/01/07/use-hexo/</loc>
     
-    <lastmod>2016-03-18T04:40:11.000Z</lastmod>
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>ayjkdev.top/2016/03/25/ios-animation-circle-view/</loc>
+    
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>ayjkdev.top/2016/03/31/ios-anima-page-control/</loc>
+    
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>ayjkdev.top/2016/04/06/update-in-app-with-itunes-lookup/</loc>
+    
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>ayjkdev.top/2016/01/10/cocoapods-questions/</loc>
+    
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>ayjkdev.top/2016/03/16/cell-with-masonry/</loc>
+    
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>ayjkdev.top/2016/04/03/bubbleview-like-qq/</loc>
+    
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>ayjkdev.top/2016/02/20/answer-in-group/</loc>
+    
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>ayjkdev.top/tags/index.html</loc>
+    
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>ayjkdev.top/categories/index.html</loc>
+    
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>ayjkdev.top/archives/index.html</loc>
+    
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>ayjkdev.top/about/index.html</loc>
+    
+    <lastmod>2016-05-09T02:09:41.000Z</lastmod>
     
   </url>
   

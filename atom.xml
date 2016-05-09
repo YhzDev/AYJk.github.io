@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="ayjkdev.top/"/>
-  <updated>2016-05-09T02:32:13.000Z</updated>
+  <updated>2016-05-09T03:02:47.000Z</updated>
   <id>ayjkdev.top/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决Xcode报错</title>
+    <link href="ayjkdev.top/2016/05/09/solve-xcode-error/"/>
+    <id>ayjkdev.top/2016/05/09/solve-xcode-error/</id>
+    <published>2016-05-09T02:47:46.000Z</published>
+    <updated>2016-05-09T03:02:47.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;Xcode报错&quot;&gt;&lt;a href=&quot;#Xcode报错&quot; class=&quot;headerlink&quot; title=&quot;Xcode报错&quot;&gt;&lt;/a&gt;Xcode报错&lt;/h1&gt;&lt;p&gt;Xcode 7.3.1更新了，也不知道修复好Xcode 7.3中无法自动补全的这个Bug没。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;话说Xcode 7.3不能补全真的是令人抓狂，这个版本几乎彻底废了，只能疯狂的Cmd+k和Cmd+B来解决，严重影响效率。&lt;br&gt;为了保险起见，我没有从AppStore更新Xcode 7.3.1，从官方可以下载到最新的，怕没修复好问题，反而覆盖了我的Xcode 7.2。那就非常尴尬了。。&lt;br&gt;但是还有出现了另一个问题，一打开就报错，错误如下&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Process:               Xcode [2675]&amp;#10;Path:                  /Applications/Xcode2.app/Contents/MacOS/Xcode&amp;#10;Identifier:            com.apple.dt.Xcode&amp;#10;Version:               7.3.1 (10188.1)&amp;#10;Build Info:            IDEFrameworks-10188001000000000~3&amp;#10;Code Type:             X86-64 (Native)&amp;#10;Parent Process:        ??? [1]&amp;#10;Responsible:           Xcode [2675]&amp;#10;User ID:               502&amp;#10;&amp;#10;Date/Time:             2016-05-09 10:38:25.865 +0800&amp;#10;OS Version:            Mac OS X 10.11.4 (15E65)&amp;#10;Report Version:        11&amp;#10;Anonymous UUID:        DCFF7EC7-3544-FE7B-ACC2-27E82669EDC0&amp;#10;&amp;#10;&amp;#10;Time Awake Since Boot: 6000 seconds&amp;#10;&amp;#10;System Integrity Protection: enabled&amp;#10;&amp;#10;Crashed Thread:        0  Dispatch queue: com.apple.main-thread&amp;#10;&amp;#10;Exception Type:        EXC_CRASH (SIGABRT)&amp;#10;Exception Codes:       0x0000000000000000, 0x0000000000000000&amp;#10;Exception Note:        EXC_CORPSE_NOTIFY&amp;#10;&amp;#10;Application Specific Information:&amp;#10;ProductBuildVersion: 7D1014&amp;#10;UNCAUGHT EXCEPTION (NSInternalInconsistencyException): Error getting value for key &amp;#39;delegateClass&amp;#39; of extension &amp;#39;Xcode.IDEPlaygroundEditor.MenuDefinition.Editor&amp;#39; in plug-in &amp;#39;com.apple.dt.IDELanguageSupportUI&amp;#39;&amp;#10;UserInfo: &amp;#123;&amp;#10;    NSUnderlyingError = &amp;#34;Error Domain=DVTPlugInErrorDomain Code=2 \&amp;#34;Loading a plug-in failed.\&amp;#34; UserInfo=&amp;#123;DVTPlugInIdentifierErrorKey=com.apple.dt.IDELanguageSupportUI, DVTPlugInExecutablePathErrorKey=/Applications/Xcode2.app/Contents/PlugIns/IDELanguageSupportUI.ideplugin/Contents/MacOS/IDELanguageSupportUI, NSLocalizedRecoverySuggestion=The plug-in or one of its prerequisite plug-ins may be missing or damaged and may need to be reinstalled., &amp;#10;&amp;#183;&amp;#183;&amp;#183;&amp;#183;&amp;#183;&amp;#183;&amp;#183;&amp;#183;&amp;#65288;&amp;#30475;&amp;#21040;&amp;#36825;&amp;#23601;&amp;#21487;&amp;#20197;&amp;#35299;&amp;#20915;&amp;#20102;&amp;#65292;&amp;#19979;&amp;#26041;&amp;#30465;&amp;#30053;&amp;#65289;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;注意到关键字眼 &lt;code&gt;com.apple.dt.IDELanguageSupportUI&lt;/code&gt;，这样只需要去对应目录下/Applications/Xcode.app/Contents/PlugIns删除IDELanguageSupportUI.ideplugin就行了。&lt;/p&gt;
+&lt;p&gt;ps：注意如果有多个Xcode，路径的Xcode.app也要对应更改成出问题的那个Xcode。其他问题报错也是也是相同的思路。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Xcode报错&quot;&gt;&lt;a href=&quot;#Xcode报错&quot; class=&quot;headerlink&quot; title=&quot;Xcode报错&quot;&gt;&lt;/a&gt;Xcode报错&lt;/h1&gt;&lt;p&gt;Xcode 7.3.1更新了，也不知道修复好Xcode 7.3中无法自动补全的这个Bug没。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Develop" scheme="ayjkdev.top/categories/Develop/"/>
+    
+    
+      <category term="Error" scheme="ayjkdev.top/tags/Error/"/>
+    
+      <category term="Xcode" scheme="ayjkdev.top/tags/Xcode/"/>
+    
+  </entry>
   
   <entry>
     <title>弹性下拉刷新控件PMElasticRefresh</title>
@@ -72,7 +102,7 @@
     <link href="ayjkdev.top/2016/04/06/update-in-app-with-itunes-lookup/"/>
     <id>ayjkdev.top/2016/04/06/update-in-app-with-itunes-lookup/</id>
     <published>2016-04-06T13:41:59.000Z</published>
-    <updated>2016-04-07T15:30:44.000Z</updated>
+    <updated>2016-05-09T02:09:41.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;iTunesLookup&quot;&gt;&lt;a href=&quot;#iTunesLookup&quot; class=&quot;headerlink&quot; title=&quot;iTunesLookup&quot;&gt;&lt;/a&gt;iTunesLookup&lt;/h1&gt;&lt;p&gt;iTunesLookup其实是有Apple提供的查询应用信息的接口，我们可以利用它来进行App更新提示的功能实现。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -123,7 +153,7 @@
     <link href="ayjkdev.top/2016/04/05/corner-radius-with-out-offscreen-rendered/"/>
     <id>ayjkdev.top/2016/04/05/corner-radius-with-out-offscreen-rendered/</id>
     <published>2016-04-05T15:08:51.000Z</published>
-    <updated>2016-05-08T09:27:53.000Z</updated>
+    <updated>2016-05-09T02:09:41.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;离屏渲染是导致APP性能损失的一大问题，开发时应该尽可能的避免。所以趁着节假日花了一点时间写了一个工具类。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -171,7 +201,7 @@
     <link href="ayjkdev.top/2016/04/03/bubbleview-like-qq/"/>
     <id>ayjkdev.top/2016/04/03/bubbleview-like-qq/</id>
     <published>2016-04-03T11:21:14.000Z</published>
-    <updated>2016-04-03T11:36:06.000Z</updated>
+    <updated>2016-05-09T02:09:41.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;模仿qq的可拖拽未读气泡&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -214,7 +244,7 @@
     <link href="ayjkdev.top/2016/04/02/slide-menu-ios/"/>
     <id>ayjkdev.top/2016/04/02/slide-menu-ios/</id>
     <published>2016-04-02T08:43:53.000Z</published>
-    <updated>2016-04-02T09:10:11.000Z</updated>
+    <updated>2016-05-09T02:09:41.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;这次带来一个带动画效果的SlideMenu，丰富交互。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -253,7 +283,7 @@
     <link href="ayjkdev.top/2016/03/31/ios-anima-page-control/"/>
     <id>ayjkdev.top/2016/03/31/ios-anima-page-control/</id>
     <published>2016-03-31T01:18:22.000Z</published>
-    <updated>2016-04-03T11:38:41.000Z</updated>
+    <updated>2016-05-09T02:09:41.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;接上一篇博客&lt;a href=&quot;http://ayjkdev.top/2016/03/25/ios-animation-circle-view/&quot;&gt;一个水滴动效的pageController（一）&lt;/a&gt;。&lt;br&gt;接下来我们会实现相应的带动效的pageControl，在结尾我会附上github地址。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -301,7 +331,7 @@
     <link href="ayjkdev.top/2016/03/25/ios-animation-circle-view/"/>
     <id>ayjkdev.top/2016/03/25/ios-animation-circle-view/</id>
     <published>2016-03-25T07:34:06.000Z</published>
-    <updated>2016-04-03T11:38:48.000Z</updated>
+    <updated>2016-05-09T02:09:41.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;首先感谢&lt;a href=&quot;http://book.kittenyang.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;KittenYang&lt;/a&gt;能写出一本这么好的交互书。这本书对我的影响很大，是我奋斗的目标。&lt;br&gt;接下来我会对其中的部分实现就行说明讲解：&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -343,7 +373,7 @@
     <link href="ayjkdev.top/2016/03/18/solve-questions/"/>
     <id>ayjkdev.top/2016/03/18/solve-questions/</id>
     <published>2016-03-18T01:19:59.000Z</published>
-    <updated>2016-03-28T11:10:57.000Z</updated>
+    <updated>2016-05-09T02:09:41.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;博主在自己学习开发过程中遇到或见到的一些问题，与你们分享，希望有所帮助。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -458,7 +488,7 @@
     <link href="ayjkdev.top/2016/03/16/cell-with-masonry/"/>
     <id>ayjkdev.top/2016/03/16/cell-with-masonry/</id>
     <published>2016-03-15T16:40:50.000Z</published>
-    <updated>2016-04-03T11:38:59.000Z</updated>
+    <updated>2016-05-09T02:09:41.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;iOS有多种布局方式，大致分为两种，即可视化布局和代码布局。两者各有优缺点，使用全凭个人喜好。&lt;br&gt;&lt;strong&gt; 1.采用xib或storyboard &lt;/strong&gt;&lt;br&gt;优点：方便快捷，能很快完成UI的适配布局，开发速度快。其中storyboard能看到每个viewController的样式和其中的入栈出栈关系。&lt;br&gt;缺点：storyboard较难进行协同开发，大型项目如果管理不当，很容易出现一团麻的现象。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt; 2.采用代码布局 &lt;/strong&gt;&lt;br&gt;优点：利于项目管理和后期维护，代码合并。能进行代码重用。（对于部分程序员来说，或许代码更为直观）&lt;br&gt;缺点：开发速度较慢，项目开发周期变长。&lt;/p&gt;
@@ -506,7 +536,7 @@
     <link href="ayjkdev.top/2016/02/20/answer-in-group/"/>
     <id>ayjkdev.top/2016/02/20/answer-in-group/</id>
     <published>2016-02-20T01:53:35.000Z</published>
-    <updated>2016-03-28T11:10:57.000Z</updated>
+    <updated>2016-05-09T02:09:41.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;问题提出：&quot;&gt;&lt;a href=&quot;#问题提出：&quot; class=&quot;headerlink&quot; title=&quot;问题提出：&quot;&gt;&lt;/a&gt;问题提出：&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xrofo.com1.z0.glb.clouddn.com/L2C%25WA5QLRBK0%7DBELD2NF64.jpg&quot; alt=&quot;问题演示图&quot;&gt;&lt;br&gt;提问者：“不知道为什么 我在ScrollView中添加三张图片，添加时frame是（0，0，屏宽，300）图片结果不是从顶部添加的，scrollView会有一段间距的。”&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -546,7 +576,7 @@
     <link href="ayjkdev.top/2016/01/10/cocoapods-questions/"/>
     <id>ayjkdev.top/2016/01/10/cocoapods-questions/</id>
     <published>2016-01-10T01:53:35.000Z</published>
-    <updated>2016-04-03T11:41:29.000Z</updated>
+    <updated>2016-05-09T02:09:41.000Z</updated>
     
     <content type="html">&lt;p&gt;最近回想起以前的一个小项目，做来给自己看漫画的，当时还没有用到CocoaPods去管理第三方库，现在想更换成CocoaPods，但是在更换过程中出现了一点小问题，现在整理下。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;问题一：&quot;&gt;&lt;a href=&quot;#问题一：&quot; class=&quot;headerlink&quot; title=&quot;问题一：&quot;&gt;&lt;/a&gt;问题一：&lt;/h2&gt;&lt;p&gt;通过CocoaPods去导入AFNetworking，执行 pod install –verbose –no-repo-update 终端会有相应的警告：&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[!] The `aikaaikaComic [Debug]` target overrides the `OTHER_LDFLAGS` build setting defined in `Pods/Target Support Files/Pods/Pods.debug.xcconfig&#39;. This can lead to problems with the CocoaPods installation&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    - Use the `$(inherited)` flag, or&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    - Remove the build settings from the target.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[!] The `aikaaikaComic [Release]` target overrides the `OTHER_LDFLAGS` build setting defined in `Pods/Target Support Files/Pods/Pods.release.xcconfig&#39;. This can lead to problems with the CocoaPods installation&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    - Use the `$(inherited)` flag, or&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    - Remove the build settings from the target.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -596,7 +626,7 @@
     <link href="ayjkdev.top/2016/01/07/use-hexo/"/>
     <id>ayjkdev.top/2016/01/07/use-hexo/</id>
     <published>2016-01-07T07:12:05.000Z</published>
-    <updated>2016-03-18T04:40:11.000Z</updated>
+    <updated>2016-05-09T02:09:41.000Z</updated>
     
     <content type="html">&lt;p&gt;这里是AY，这是我的&lt;a href=&quot;https://github.com/AYJk&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github&lt;/a&gt;，这是我第一次搭建博客，还和生疏，以后有什么感悟的，能拿出来分享的我会写上来的。&lt;/p&gt;
 &lt;p&gt;分享我最喜欢的一段话，来自Linus：&lt;em&gt;Talk is cheap , show me the code.&lt;/em&gt;&lt;/p&gt;

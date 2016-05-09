@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Animation,Bubble,iOS," />
+  <meta name="keywords" content="Error,Xcode," />
 
 
 
@@ -59,17 +59,16 @@
 
 
 
-<meta name="description" content="前言模仿qq的可拖拽未读气泡">
+<meta name="description" content="Xcode报错Xcode 7.3.1更新了，也不知道修复好Xcode 7.3中无法自动补全的这个Bug没。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="仿qq未读消息的气泡拖拽效果">
-<meta property="og:url" content="ayjkdev.top/2016/04/03/bubbleview-like-qq/index.html">
+<meta property="og:title" content="解决Xcode报错">
+<meta property="og:url" content="ayjkdev.top/2016/05/09/solve-xcode-error/index.html">
 <meta property="og:site_name" content="AYJk的技术博客">
-<meta property="og:description" content="前言模仿qq的可拖拽未读气泡">
-<meta property="og:image" content="http://7xrofo.com1.z0.glb.clouddn.com/bubbleView.gif">
-<meta property="og:updated_time" content="2016-05-09T02:09:41.000Z">
+<meta property="og:description" content="Xcode报错Xcode 7.3.1更新了，也不知道修复好Xcode 7.3中无法自动补全的这个Bug没。">
+<meta property="og:updated_time" content="2016-05-09T03:02:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="仿qq未读消息的气泡拖拽效果">
-<meta name="twitter:description" content="前言模仿qq的可拖拽未读气泡">
+<meta name="twitter:title" content="解决Xcode报错">
+<meta name="twitter:description" content="Xcode报错Xcode 7.3.1更新了，也不知道修复好Xcode 7.3中无法自动补全的这个Bug没。">
 
 
 
@@ -87,7 +86,7 @@
   };
 </script>
 
-  <title> 仿qq未读消息的气泡拖拽效果 | AYJk的技术博客 </title>
+  <title> 解决Xcode报错 | AYJk的技术博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -267,7 +266,7 @@
             
             
               
-                仿qq未读消息的气泡拖拽效果
+                解决Xcode报错
               
             
           </h1>
@@ -279,8 +278,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-03T19:21:14+08:00" content="2016-04-03">
-              2016-04-03
+            <time itemprop="dateCreated" datetime="2016-05-09T10:47:46+08:00" content="2016-05-09">
+              2016-05-09
             </time>
           </span>
 
@@ -309,8 +308,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/03/bubbleview-like-qq/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/03/bubbleview-like-qq/" itemprop="commentsCount"></span>
+                <a href="/2016/05/09/solve-xcode-error/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/09/solve-xcode-error/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -320,7 +319,7 @@
 
           
           
-             <span id="/2016/04/03/bubbleview-like-qq/" class="leancloud_visitors" data-flag-title="仿qq未读消息的气泡拖拽效果">
+             <span id="/2016/05/09/solve-xcode-error/" class="leancloud_visitors" data-flag-title="解决Xcode报错">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -341,23 +340,12 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>模仿qq的可拖拽未读气泡</p>
+        <h1 id="Xcode报错"><a href="#Xcode报错" class="headerlink" title="Xcode报错"></a>Xcode报错</h1><p>Xcode 7.3.1更新了，也不知道修复好Xcode 7.3中无法自动补全的这个Bug没。</p>
 <a id="more"></a>
-<h1 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h1><p>效果图如下<br><img src="http://7xrofo.com1.z0.glb.clouddn.com/bubbleView.gif" alt="效果图"></p>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">self</span><span class="variable">.bubbleView</span> = [[AYBubbleView alloc] initWithCenterPoint:<span class="keyword">self</span><span class="variable">.view</span><span class="variable">.center</span> bubleRadius:<span class="number">15</span> addToSuperView:<span class="keyword">self</span><span class="variable">.view</span>];</span><br><span class="line"><span class="keyword">self</span><span class="variable">.bubbleView</span><span class="variable">.decayCoefficent</span> = <span class="number">.2</span>;</span><br><span class="line"><span class="keyword">self</span><span class="variable">.bubbleView</span><span class="variable">.unReadLabel</span><span class="variable">.text</span> = <span class="string">@"1"</span>;</span><br><span class="line"><span class="keyword">self</span><span class="variable">.bubbleView</span><span class="variable">.bubbleColor</span> = [<span class="built_in">UIColor</span> redColor];</span><br><span class="line">__<span class="keyword">weak</span> <span class="keyword">typeof</span>(<span class="keyword">self</span>) weakSelf = <span class="keyword">self</span>;</span><br><span class="line"><span class="keyword">self</span><span class="variable">.bubbleView</span><span class="variable">.cleanMessageBlock</span> = ^(<span class="built_in">BOOL</span> isClean) &#123;</span><br><span class="line">    <span class="keyword">if</span> (isClean) &#123;</span><br><span class="line">        weakSelf<span class="variable">.messageSteper</span><span class="variable">.value</span> = <span class="number">0</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="comment">//            do other logical operation</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>初始化的时候配置bubble的中心点坐标、半径和父视图。</p>
-<p><strong>decayCoefficient</strong>：衰减系数，0~1，值越大，可拉伸的距离越大。</p>
-<p><strong>unreadLabel</strong>：中间显示的未读数，可自行配置font，color等。</p>
-<p><strong>bubbleColor</strong>：气泡的颜色</p>
-<p><strong>cleanMessageBlock</strong>：清除消息的时候进行回调操作。</p>
-<h2 id="显示和隐藏"><a href="#显示和隐藏" class="headerlink" title="显示和隐藏"></a>显示和隐藏</h2><p>当需要显示气泡的时候调用下面的方法</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span><span class="variable">.bubbleView</span> showBubbleView];</span><br></pre></td></tr></table></figure>
-<p>当需要隐藏气泡的时候调用下面的方法</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span><span class="variable">.bubbleView</span> hidenBubbleView];</span><br></pre></td></tr></table></figure>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>通过两个view和一个shapLayer来构成整个效果，shapLayer作为连接大view（随手指移动）和小view（原处缩放）<br>拉的越远，shapLayer的边界越弯曲。<br>弯曲效果来自于使用贝塞尔曲线<br><figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">UIBezierPath</span> *shapePath = [<span class="built_in">UIBezierPath</span> bezierPath];</span><br><span class="line">[shapePath moveToPoint:point_A];</span><br><span class="line">[shapePath addQuadCurveToPoint:point_C controlPoint:controlPoint_AC];</span><br><span class="line">[shapePath addLineToPoint:point_D];</span><br><span class="line">[shapePath addQuadCurveToPoint:point_B controlPoint:controlPoint_BD];</span><br><span class="line">[shapePath moveToPoint:point_A];</span><br><span class="line">[shapePath closePath];</span><br></pre></td></tr></table></figure></p>
-<p><strong>- (void)addQuadCurveToPoint:(CGPoint)endPoint controlPoint:(CGPoint)controlPoint;
-</strong>是生成曲线的关键。</p>
-<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>已经上传到GitHub了：<a href="https://github.com/AYJk/AYBubbleView" target="_blank" rel="external">AYBubbleView</a></p>
+<p>话说Xcode 7.3不能补全真的是令人抓狂，这个版本几乎彻底废了，只能疯狂的Cmd+k和Cmd+B来解决，严重影响效率。<br>为了保险起见，我没有从AppStore更新Xcode 7.3.1，从官方可以下载到最新的，怕没修复好问题，反而覆盖了我的Xcode 7.2。那就非常尴尬了。。<br>但是还有出现了另一个问题，一打开就报错，错误如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Process:               Xcode [2675]&#10;Path:                  /Applications/Xcode2.app/Contents/MacOS/Xcode&#10;Identifier:            com.apple.dt.Xcode&#10;Version:               7.3.1 (10188.1)&#10;Build Info:            IDEFrameworks-10188001000000000~3&#10;Code Type:             X86-64 (Native)&#10;Parent Process:        ??? [1]&#10;Responsible:           Xcode [2675]&#10;User ID:               502&#10;&#10;Date/Time:             2016-05-09 10:38:25.865 +0800&#10;OS Version:            Mac OS X 10.11.4 (15E65)&#10;Report Version:        11&#10;Anonymous UUID:        DCFF7EC7-3544-FE7B-ACC2-27E82669EDC0&#10;&#10;&#10;Time Awake Since Boot: 6000 seconds&#10;&#10;System Integrity Protection: enabled&#10;&#10;Crashed Thread:        0  Dispatch queue: com.apple.main-thread&#10;&#10;Exception Type:        EXC_CRASH (SIGABRT)&#10;Exception Codes:       0x0000000000000000, 0x0000000000000000&#10;Exception Note:        EXC_CORPSE_NOTIFY&#10;&#10;Application Specific Information:&#10;ProductBuildVersion: 7D1014&#10;UNCAUGHT EXCEPTION (NSInternalInconsistencyException): Error getting value for key &#39;delegateClass&#39; of extension &#39;Xcode.IDEPlaygroundEditor.MenuDefinition.Editor&#39; in plug-in &#39;com.apple.dt.IDELanguageSupportUI&#39;&#10;UserInfo: &#123;&#10;    NSUnderlyingError = &#34;Error Domain=DVTPlugInErrorDomain Code=2 \&#34;Loading a plug-in failed.\&#34; UserInfo=&#123;DVTPlugInIdentifierErrorKey=com.apple.dt.IDELanguageSupportUI, DVTPlugInExecutablePathErrorKey=/Applications/Xcode2.app/Contents/PlugIns/IDELanguageSupportUI.ideplugin/Contents/MacOS/IDELanguageSupportUI, NSLocalizedRecoverySuggestion=The plug-in or one of its prerequisite plug-ins may be missing or damaged and may need to be reinstalled., &#10;&#183;&#183;&#183;&#183;&#183;&#183;&#183;&#183;&#65288;&#30475;&#21040;&#36825;&#23601;&#21487;&#20197;&#35299;&#20915;&#20102;&#65292;&#19979;&#26041;&#30465;&#30053;&#65289;</span><br></pre></td></tr></table></figure>
+<p>注意到关键字眼 <code>com.apple.dt.IDELanguageSupportUI</code>，这样只需要去对应目录下/Applications/Xcode.app/Contents/PlugIns删除IDELanguageSupportUI.ideplugin就行了。</p>
+<p>ps：注意如果有多个Xcode，路径的Xcode.app也要对应更改成出问题的那个Xcode。其他问题报错也是也是相同的思路。</p>
 
       
     </div>
@@ -372,11 +360,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Animation/" rel="tag">#Animation</a>
+            <a href="/tags/Error/" rel="tag">#Error</a>
           
-            <a href="/tags/Bubble/" rel="tag">#Bubble</a>
-          
-            <a href="/tags/iOS/" rel="tag">#iOS</a>
+            <a href="/tags/Xcode/" rel="tag">#Xcode</a>
           
         </div>
       
@@ -385,17 +371,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/02/slide-menu-ios/" rel="next" title="实现带动画的侧边菜单">
-                <i class="fa fa-chevron-left"></i> 实现带动画的侧边菜单
+              <a href="/2016/05/08/pmelasticrefresh-achieve/" rel="next" title="弹性下拉刷新控件PMElasticRefresh">
+                <i class="fa fa-chevron-left"></i> 弹性下拉刷新控件PMElasticRefresh
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/05/corner-radius-with-out-offscreen-rendered/" rel="prev" title="不触发离屏渲染的情况下设置圆角">
-                不触发离屏渲染的情况下设置圆角 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -410,10 +392,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/03/bubbleview-like-qq/"
-     data-title="仿qq未读消息的气泡拖拽效果"
+        <div class="ds-share flat" data-thread-key="2016/05/09/solve-xcode-error/"
+     data-title="解决Xcode报错"
      data-content=""
-     data-url="ayjkdev.top/2016/04/03/bubbleview-like-qq/">
+     data-url="ayjkdev.top/2016/05/09/solve-xcode-error/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -443,8 +425,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/03/bubbleview-like-qq/"
-           data-title="仿qq未读消息的气泡拖拽效果" data-url="ayjkdev.top/2016/04/03/bubbleview-like-qq/">
+      <div class="ds-thread" data-thread-key="2016/05/09/solve-xcode-error/"
+           data-title="解决Xcode报错" data-url="ayjkdev.top/2016/05/09/solve-xcode-error/">
       </div>
     
   </div>
@@ -565,7 +547,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#效果图"><span class="nav-number">2.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">3.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示和隐藏"><span class="nav-number">3.2.</span> <span class="nav-text">显示和隐藏</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分析"><span class="nav-number">4.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源码"><span class="nav-number">5.</span> <span class="nav-text">源码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Xcode报错"><span class="nav-number">1.</span> <span class="nav-text">Xcode报错</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
